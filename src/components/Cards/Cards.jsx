@@ -53,8 +53,8 @@ export default function Cards() {
   ];
 
   return (
-    <div className="my-24">
-      <div className="flex flex-col gap-1 col-span-12 text-gray-600 bg-transparent text-start pb-16 md:pb-20">
+    <div className="my-12">
+      <div className="flex flex-col gap-1 col-span-12 text-gray-600 bg-transparent text-start pb-8 md:pb-10">
         <h2
           className="heading-sm text-4xl text-center md:heading-lg font-normal 2xl:heading-xl text-gray-900"
           data-testid="usp-title"

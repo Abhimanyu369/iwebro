@@ -4,6 +4,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Signup from "./pages/Signup";
 import Hiring from "./pages/Hiring";
+import LandingPage from "./pages/HireNow";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/hiring" element={<Hiring />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/hire-now" element={<LandingPage />} />
         </Routes>
       </Router>
     </>

@@ -1,5 +1,5 @@
-import React from "react";
 import "./Hero.css";
+import { Link } from "react-router-dom";
 
 export default function Hero() {
   return (
@@ -17,12 +17,12 @@ export default function Hero() {
             </p>
           </div>
           <div className="hero-bg-video-btns">
-            <a
-              href="/request-demo"
+            <Link
+              to="/hire-now"
               className="button-primary w-button bg-[#0e8ac8] text-white"
             >
               Hire Talent
-            </a>
+            </Link>
           </div>
         </div>
         <div className="hero-bg-video-counters pb-3">

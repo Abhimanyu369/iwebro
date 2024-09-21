@@ -1,11 +1,10 @@
-import React from "react";
 import "./Benefits.css";
 
 export default function Benefits() {
   const cards = [
     {
       url: "https://assets.toptal.io/images?url=https%3A%2F%2Fbs-uploads.toptal.io%2Fblackfish-uploads%2Fcomponents%2Fbenefit%2F8809833%2Fimage%2Foptimized%2Fhire_quickly-73465c194a619e997036471389d47536.svg",
-      title: "The top 3%",
+      title: "The top 5%",
       desc: "We are AI powered platform that access by totally transparent code test and soft skills test.",
     },
     {
@@ -38,7 +37,7 @@ export default function Benefits() {
             className="heading-sm text-4xl text-center md:heading-lg font-normal 2xl:heading-xl text-gray-900"
             data-testid="usp-title"
           >
-            Benefits
+            Why Choose TopTalenz
           </h2>
           <p className="paragraph-md font-regular 2xl:heading-xs text-center">
             Quickly assemble the teams you need, exactly when you need them.

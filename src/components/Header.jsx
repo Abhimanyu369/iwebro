@@ -11,7 +11,7 @@ const Header = () => {
       link: "/",
     },
     {
-      text: "Top 3%",
+      text: "Top 5%",
       link: "/hiring",
     },
     {
@@ -99,9 +99,9 @@ const Header = () => {
           </a> */}
         </nav>
         <div className="flex items-center space-x-4">
-          <button className="bg-[#0e8ac8] text-white px-4 py-2 rounded-lg">
-            Start Hiring
-          </button>
+          <Link to="hire-now" className="bg-[#0e8ac8] text-white px-4 py-2 rounded-lg">
+            Hire Talent
+          </Link>
           <Link to="/signup" className={`${scrolled ? "text-gray-900" : "text-white"}`}>Log In</Link>
         </div>
       </div>

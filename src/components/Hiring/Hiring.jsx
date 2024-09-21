@@ -6,13 +6,13 @@ export default function Hiring() {
         <div className="container z-10 relative">
           <div className="hero-bg-video-left pt-20 mb-20">
             <div className="hero-bg-video-content">
-              <h1 className="hero-bg-video-title">Why 3%?</h1>
+              <h1 className="hero-bg-video-title">Why 5%?</h1>
               <p className="hero-bg-video-des">
                 Our name "Top Talenz" comes from Top Talent — meaning we
                 constantly strive to find and work with the best from around the
                 world. Our rigorous screening process identifies experts in
                 their domains who have passion and drive. Of the thousands of
-                applications Top Talenz sees each month, typically fewer than 3%
+                applications Top Talenz sees each month, typically fewer than 5%
                 are accepted.
               </p>
             </div>
