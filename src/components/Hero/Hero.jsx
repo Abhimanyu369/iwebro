@@ -9,7 +9,7 @@ export default function Hero() {
         <div className="hero-bg-video-left pt-40 mb-20">
           <div className="hero-bg-video-content">
             <h1 className="hero-bg-video-title">
-              Hire the Top 3% of professional Talent
+              Hire the Top 5% of professional Talent
             </h1>
             <p className="hero-bg-video-des">
               TopTalenz is network of Highly skilled, certified tech
