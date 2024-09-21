@@ -31,4 +31,4 @@ jobs:
 
     - name: Copy files to EC2
       run: |
-        scp -i key.pem -o StrictHostKeyChecking=no -r build/ ubuntu@54.152.132.123/:/var/www/html/
+        scp -i key.pem -o StrictHostKeyChecking=no -r dist/* ubuntu@54.152.132.123/:/var/www/html/
