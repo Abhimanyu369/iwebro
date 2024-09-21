@@ -24,6 +24,12 @@ jobs:
     - name: Build React App
       run: npm run build
 
+    - name: Check workspace contents
+      run: ls -la
+
+    - name: Check dist folder
+      run: ls -la dist/
+
     - name: Add SSH Key
       run: |
         echo "${{ secrets.EC2_SSH_KEY }}" | tr -d '\r' > key.pem
