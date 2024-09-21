@@ -26,9 +26,9 @@ jobs:
 
     - name: Add SSH Key
       run: |
-        echo "${{ secrets.EC2_SSH_KEY }}" > key.pem
+        echo "${{ secrets.EC2_SSH_KEY }}" | tr -d '\r' > key.pem
         chmod 400 key.pem
 
     - name: Copy files to EC2
       run: |
-        scp -i ${{ secrets.EC2_SSH_KEY }} -o StrictHostKeyChecking=no -r build/ ubuntu@54.152.132.123/:/var/www/html/
+        scp -i key.pem -o StrictHostKeyChecking=no -r build/ ubuntu@54.152.132.123/:/var/www/html/
