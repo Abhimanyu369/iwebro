@@ -13,10 +13,10 @@ function Home() {
     <>
       <Header />
       <Hero />
-      <div className="py-10">
+      <div className="pb-8 pt-12">
         <Marquee>
           {Array.from({ length: 14 }, (_, i) => i + 1).map((i) => (
-            <img key={i} src={`/logo${i}.png`} className="h-8 w-auto mx-5"/>
+            <img key={i} src={`/logo${i}.png`} className="h-[26px] w-auto mx-5"/>
           ))}
         </Marquee>
       </div>
