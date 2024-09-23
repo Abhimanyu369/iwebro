@@ -129,7 +129,7 @@ const LandingPage = () => {
               onChange={handleChange}
               className="border p-3 w-full rounded-lg"
             >
-              <option>How did you hear about Supersourcing?</option>
+              <option>How did you hear about Top Talenz ?</option>
               <option value="LinkedIn">LinkedIn</option>
               <option value="Google">Google</option>
               <option value="Friend">Friend</option>

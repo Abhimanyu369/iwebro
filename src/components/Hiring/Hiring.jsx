@@ -24,7 +24,7 @@ export default function Hiring() {
         ></img>
         <div className="hero-bg-video-overlay-vertical"></div>
       </div>
-      <div className="py-20">
+      <div className="pt-20">
         <div className="max-w-screen-xl mx-auto">
           <div className="flex flex-col gap-1 col-span-12 text-gray-600 bg-transparent text-start pb-16 md:pb-20">
             <h2

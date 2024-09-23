@@ -1,10 +1,9 @@
-import React from "react";
 import "./Flow.css";
 
 export default function Flow() {
   const cards = [
     "Talk to our experts",
-    "Showcase the AI-Matched Talent",
+    "Showcase",
     "Screening",
     "Onboarding",
   ];

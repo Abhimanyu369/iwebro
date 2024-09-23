@@ -48,7 +48,11 @@ export default function Benefits() {
           {cards?.map((card, index) => (
             <div key={index} className="col-span-1 p-4 w-1/4">
               <img src={card?.url} alt="" className="mb-7 w-16 h-16" />
+
               <h3 className="font-medium text-base mb-3">{card.title}</h3>
+              {index === 0 && (
+                <span className="inline-block h-[2px] w-24 absolute -mt-2 bg-[#0e8ac8] -skew-x-6"></span>
+              )}
               <p className="text-sm font-light">{card.desc}</p>
             </div>
           ))}

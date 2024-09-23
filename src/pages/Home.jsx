@@ -31,6 +31,28 @@ function Home() {
       </div>
       <Flow />
       <Hiring />
+      <div className="my-12">
+        <div className="flex flex-col gap-1 col-span-12 text-gray-600 bg-transparent text-start pb-8 md:pb-10">
+          <h2
+            className="heading-sm text-4xl text-center md:heading-lg font-normal 2xl:heading-xl text-gray-900"
+            data-testid="usp-title"
+          >
+            Find <span className="text-[#0e8ac8]">our leaders</span> speaking or
+            attending
+          </h2>
+        </div>
+        <div className="max-w-screen-xl mx-auto flex gap-4">
+          <div>
+            <img src="/img1.jpg" className="h-auto w-full" />
+          </div>
+          <div>
+            <img src="/img2.jpg" className="h-auto w-full" />
+          </div>
+          <div>
+            <img src="/img3.jpg" className="h-auto w-full" />
+          </div>
+        </div>
+      </div>
       <Footer />
     </>
   );
