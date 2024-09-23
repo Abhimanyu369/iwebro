@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Marquee from "react-fast-marquee";
 import Benefits from "../components/Benefits/Benefits";
 import Cards from "../components/Cards/Cards";
 import Flow from "../components/Flow/Flow";
@@ -12,6 +13,13 @@ function Home() {
     <>
       <Header />
       <Hero />
+      <div className="py-10">
+        <Marquee>
+          {Array.from({ length: 14 }, (_, i) => i + 1).map((i) => (
+            <img key={i} src={`/logo${i}.png`} className="h-16 w-auto mx-5"/>
+          ))}
+        </Marquee>
+      </div>
       <Cards />
       <Benefits />
       <div className="bg-[#0e8ac8] py-8">
@@ -37,8 +45,7 @@ function Home() {
             className="heading-sm text-4xl text-center md:heading-lg font-normal 2xl:heading-xl text-gray-900"
             data-testid="usp-title"
           >
-            Find <span className="text-[#0e8ac8]">our leaders</span> speaking or
-            attending
+            <span className="text-[#0e8ac8]">Our team</span> attending/speaking
           </h2>
         </div>
         <div className="max-w-screen-xl mx-auto flex gap-4">

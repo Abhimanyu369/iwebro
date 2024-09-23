@@ -3,7 +3,7 @@ import "./Flow.css";
 export default function Flow() {
   const cards = [
     "Talk to our experts",
-    "Showcase",
+    "Showcase matched profile",
     "Screening",
     "Onboarding",
   ];
