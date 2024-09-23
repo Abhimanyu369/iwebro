@@ -16,7 +16,7 @@ function Home() {
       <div className="py-10">
         <Marquee>
           {Array.from({ length: 14 }, (_, i) => i + 1).map((i) => (
-            <img key={i} src={`/logo${i}.png`} className="h-10 w-auto mx-5"/>
+            <img key={i} src={`/logo${i}.png`} className="h-8 w-auto mx-5"/>
           ))}
         </Marquee>
       </div>
