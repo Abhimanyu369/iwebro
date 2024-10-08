@@ -38,7 +38,7 @@ const LandingPage = () => {
           <Link to="/">
             <img src="/logo.png" alt="Logo" className="h-10" />
           </Link>
-          <h1 className="text-3xl text-gray-900 mt-10">
+          <h1 className="!text-xl lg:!text-3xl text-gray-900 mt-10">
             Work With Only The Top Pre-vetted{" "}
             <span className="text-[#0e8ac8]">Tech Talent</span>
           </h1>
