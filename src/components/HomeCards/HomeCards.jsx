@@ -48,10 +48,10 @@ const cardsData = [
 ];
 
 const Card = ({ title, description, icon, linkText }) => (
-  <div className={`rounded-md border bg-white p-6 max-w-sm flex flex-col`}>
+  <div className={`rounded-md border bg-white p-6 max-w-sm flex flex-col items-center`}>
     <div className={`text-3xl font-thin text-[#0e8ac8] mb-3`}>{icon}</div>
     <h3 className="text-xl mb-2">{title}</h3>
-    <p className="text-sm font-light mb-auto">{description}</p>
+    <p className="text-sm font-light mb-auto text-center">{description}</p>
     <Link to="/contact" className="text-[#0e8ac8] hover:underline mt-4">
       {linkText} →
     </Link>
