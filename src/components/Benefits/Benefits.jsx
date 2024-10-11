@@ -46,12 +46,12 @@ export default function Benefits() {
         <div className="flex flex-wrap justify-center gap-x-4 gap-y-8">
           {/* <div className="grid grid-cols-3 justify-center gap-x-4 gap-y-6"> */}
           {cards?.map((card, index) => (
-            <div key={index} className="col-span-1 p-4 w-1/4 transition-all cursor-pointer hover:bg-[#0e8ac822]">
-              <img src={card?.url} alt="" className="mb-7 w-16 h-16" />
+            <div key={index} className="col-span-1 p-4 w-1/4 relative transition-all cursor-pointer hover:bg-[#0e8ac822] text-center">
+              <img src={card?.url} alt="" className="mb-7 mx-auto w-16 h-16" />
 
               <h3 className="font-medium text-base mb-3">{card.title}</h3>
               {index === 0 && (
-                <span className="inline-block h-[2px] w-24 absolute -mt-2 bg-[#0e8ac8] -skew-x-6"></span>
+                <span className="inline-block h-[2px] w-24 absolute -mt-2 bg-[#0e8ac8] -skew-x-6 left-1/2 -translate-x-1/2"></span>
               )}
               <p className="text-sm font-light">{card.desc}</p>
             </div>

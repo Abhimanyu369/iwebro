@@ -8,7 +8,7 @@ const cardsData = [
   {
     title: "Contract",
     description:
-      "Hire a full-time contract software programmer who seamlessly integrates with your team.",
+      "Hire a full-time contract software professional who works effortlessly with your team.",
     icon: <RiContractLine />, // You can replace this with an actual icon.
     linkText: "Get in Touch",
     linkUrl: "#",
@@ -18,7 +18,7 @@ const cardsData = [
   {
     title: "C2H Model",
     description:
-      "If you're impressed with your developer's performance, you can transition them to your permanent payroll.",
+      "If you are content with your developer's performance, you can add them to your permanent payroll.",
     icon: <LuUserCheck />,
     linkText: "Get in Touch",
     linkUrl: "#",
@@ -28,7 +28,7 @@ const cardsData = [
   {
     title: "On-Site",
     description:
-      "Impressed with your developer’s performance? Easily move them to your permanent payroll.",
+      "Developers can work from your workstations. Easily will deploy you to your location.",
     icon: <GrLocation />,
     linkText: "Get in Touch",
     linkUrl: "#",
@@ -38,7 +38,7 @@ const cardsData = [
   {
     title: "Remote",
     description:
-      "Secure full-time remote software engineers who can work with your team from any place.",
+      "Trusted full-time remote software engineers who can collaborate with your team from anywhere.",
     icon: <LuGlobe />,
     linkText: "Get in Touch",
     linkUrl: "#",
