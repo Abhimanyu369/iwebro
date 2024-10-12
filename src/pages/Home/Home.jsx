@@ -8,6 +8,7 @@ import Hero from "../../components/Hero/Hero";
 import Hiring from "../../components/Hiring/Hiring";
 import HomeMarquee from "../../components/HomeMarquee/HomeMarquee";
 import HomeCards from "../../components/HomeCards/HomeCards";
+import CardSlider from "../../components/CardSlider";
 
 function Home() {
   return (
@@ -15,7 +16,8 @@ function Home() {
       <Header />
       <Hero />
       <HomeMarquee />
-      <Cards />
+      {/* <Cards /> */}
+      <CardSlider />
       <Benefits />
       <div className="bg-[#0e8ac8] py-8">
         <div className="max-w-6xl mx-auto flex items-center justify-between">
