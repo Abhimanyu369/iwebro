@@ -9,6 +9,7 @@ import Hiring from "../../components/Hiring/Hiring";
 import HomeMarquee from "../../components/HomeMarquee/HomeMarquee";
 import HomeCards from "../../components/HomeCards/HomeCards";
 import CardSlider from "../../components/CardSlider";
+import WeServe from "./WeServe";
 
 function Home() {
   return (
@@ -58,6 +59,7 @@ function Home() {
           </div>
         </div>
       </div>
+      <WeServe />
       <Footer />
     </>
   );

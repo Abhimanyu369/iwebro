@@ -3,27 +3,27 @@ import "./Benefits.css";
 export default function Benefits() {
   const cards = [
     {
-      url: "https://assets.toptal.io/images?url=https%3A%2F%2Fbs-uploads.toptal.io%2Fblackfish-uploads%2Fcomponents%2Fbenefit%2F8809833%2Fimage%2Foptimized%2Fhire_quickly-73465c194a619e997036471389d47536.svg",
+      url: "/assets/svg/benefit1.svg",
       title: "The top 5%",
       desc: "We are AI powered platform that access by totally transparent code test and soft skills test.",
     },
     {
-      url: "https://assets.toptal.io/images?url=https%3A%2F%2Fbs-uploads.toptal.io%2Fblackfish-uploads%2Fcomponents%2Fbenefit%2F8809834%2Fimage%2Foptimized%2Ftop_three_percent-84a3232607ab54008147fa66eb1bb115.svg",
+      url: "/assets/svg/benefit2.svg",
       title: "Reduce the time of hiring",
       desc: "We are a network of verified and skilled talents, that will short your hiring time.",
     },
     {
-      url: "https://assets.toptal.io/images?url=https%3A%2F%2Fbs-uploads.toptal.io%2Fblackfish-uploads%2Fcomponents%2Fbenefit%2F8809835%2Fimage%2Foptimized%2Fleading_the_future_of_work-7623b38e47167ebb0f2a42649d699e18.svg",
+      url: "/assets/svg/benefit3.svg",
       title: "Boost your ROI",
       desc: "Smart tools that help you improve hiring efficiency.",
     },
     {
-      url: "https://assets.toptal.io/images?url=https%3A%2F%2Fbs-uploads.toptal.io%2Fblackfish-uploads%2Fcomponents%2Fbenefit%2F8809836%2Fimage%2Foptimized%2Fa_level_above-5767dffe5115a388ed7d66b65da08f77.svg",
+      url: "/assets/svg/benefit4.svg",
       title: "Hire quickly",
       desc: "Within 48 hours",
     },
     {
-      url: "https://assets.toptal.io/images?url=https%3A%2F%2Fbs-uploads.toptal.io%2Fblackfish-uploads%2Fcomponents%2Ftrustpilot_section%2Fstatistic%2F8809839%2Ficon%2Foptimized%2Fjobs-0e1589e7f11a2d16d6db2350fa4063bc.svg",
+      url: "/assets/svg/benefit5.svg",
       title: "Leave the groundwork to us",
       desc: "All the compliances and onboarding processes leave to us.",
     },
