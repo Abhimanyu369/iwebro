@@ -1,24 +1,24 @@
 const countries = [
-  { name: "Sri Lanka", flag: "https://flagcdn.com/16x12/lk.png" },
-  { name: "India", flag: "https://flagcdn.com/16x12/in.png" },
-  { name: "Australia", flag: "https://flagcdn.com/16x12/au.png" },
-  { name: "Malaysia", flag: "https://flagcdn.com/16x12/my.png" },
-  { name: "Singapore", flag: "https://flagcdn.com/16x12/sg.png" },
-  { name: "Indonesia", flag: "https://flagcdn.com/16x12/id.png" },
-  { name: "Fiji", flag: "https://flagcdn.com/16x12/fj.png" },
-  { name: "Cambodia", flag: "https://flagcdn.com/16x12/kh.png" },
-  { name: "Bangladesh", flag: "https://flagcdn.com/16x12/bd.png" },
-  { name: "United Kingdom", flag: "https://flagcdn.com/16x12/gb.png" },
-  { name: "Canada", flag: "https://flagcdn.com/16x12/ca.png" },
-  { name: "Nepal", flag: "https://flagcdn.com/16x12/np.png" },
-  { name: "Maldives", flag: "https://flagcdn.com/16x12/mv.png" },
-  { name: "China", flag: "https://flagcdn.com/16x12/cn.png" },
-  { name: "Japan", flag: "https://flagcdn.com/16x12/jp.png" },
-  { name: "Dubai", flag: "https://flagcdn.com/16x12/ae.png" },
-  { name: "Kuwait", flag: "https://flagcdn.com/16x12/kw.png" },
-  { name: "Philippines", flag: "https://flagcdn.com/16x12/ph.png" },
-  { name: "Vietnam", flag: "https://flagcdn.com/16x12/vn.png" },
-  { name: "Thailand", flag: "https://flagcdn.com/16x12/th.png" },
+  { name: "Sri Lanka", flag: "https://flagcdn.com/24x18/lk.png" },
+  { name: "India", flag: "https://flagcdn.com/24x18/in.png" },
+  { name: "Australia", flag: "https://flagcdn.com/24x18/au.png" },
+  { name: "Malaysia", flag: "https://flagcdn.com/24x18/my.png" },
+  { name: "Singapore", flag: "https://flagcdn.com/24x18/sg.png" },
+  { name: "Indonesia", flag: "https://flagcdn.com/24x18/id.png" },
+  { name: "Fiji", flag: "https://flagcdn.com/24x18/fj.png" },
+  { name: "Cambodia", flag: "https://flagcdn.com/24x18/kh.png" },
+  { name: "Bangladesh", flag: "https://flagcdn.com/24x18/bd.png" },
+  { name: "United Kingdom", flag: "https://flagcdn.com/24x18/gb.png" },
+  { name: "Canada", flag: "https://flagcdn.com/24x18/ca.png" },
+  { name: "Nepal", flag: "https://flagcdn.com/24x18/np.png" },
+  { name: "Maldives", flag: "https://flagcdn.com/24x18/mv.png" },
+  { name: "China", flag: "https://flagcdn.com/24x18/cn.png" },
+  { name: "Japan", flag: "https://flagcdn.com/24x18/jp.png" },
+  { name: "Dubai", flag: "https://flagcdn.com/24x18/ae.png" },
+  { name: "Kuwait", flag: "https://flagcdn.com/24x18/kw.png" },
+  { name: "Philippines", flag: "https://flagcdn.com/24x18/ph.png" },
+  { name: "Vietnam", flag: "https://flagcdn.com/24x18/vn.png" },
+  { name: "Thailand", flag: "https://flagcdn.com/24x18/th.png" },
 ];
 
 export default function WeServe() {
@@ -33,7 +33,7 @@ export default function WeServe() {
         </p>
         <div className="grid grid-cols-2 space-x-6 justify-center">
           <div>
-            <img src="/assets/images/m2.png" alt="serve" />
+            <img src="/assets/images/m2.png" alt="serve" className="hue-rotate-[20deg]" />
           </div>
           <div className="columns-2">
             {countries.map((country, index) => (
