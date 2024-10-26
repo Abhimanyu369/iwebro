@@ -1,14 +1,24 @@
 /* eslint-disable react/prop-types */
-import { useState } from 'react';
-
-const dummyProfiles = [
-  { id: 1, name: 'John Doe', skills: 'React, Node.js' },
-  { id: 2, name: 'Jane Smith', skills: 'MongoDB, Express' },
-  { id: 3, name: 'Sam Wilson', skills: 'JavaScript, Next.js' },
-];
+import { useState, useEffect } from 'react';
+import API from '../../api/axios'; // Axios instance
 
 const MatchingProfilesModal = ({ requirement, onClose }) => {
+  const [profiles, setProfiles] = useState([]); // Store fetched profiles
   const [selectedProfiles, setSelectedProfiles] = useState([]);
+
+  // Fetch all profiles when the modal opens
+  useEffect(() => {
+    fetchAllProfiles();
+  }, []);
+
+  const fetchAllProfiles = async () => {
+    try {
+      const response = await API.get('/profiles'); // Fetch all vendor profiles
+      setProfiles(response.data);
+    } catch (error) {
+      console.error('Failed to fetch profiles:', error);
+    }
+  };
 
   const handleSelectProfile = (profileId) => {
     if (selectedProfiles.includes(profileId)) {
@@ -18,39 +28,47 @@ const MatchingProfilesModal = ({ requirement, onClose }) => {
     }
   };
 
-  const handleSubmit = () => {
-    alert(`Selected Profiles: ${selectedProfiles.join(', ')}`);
-    onClose();
+  const handleSubmit = async () => {
+    try {
+      // Submit selected profiles to the backend (if required)
+      await API.post(`/requirements/${requirement._id}/assign-profiles`, {
+        profiles: selectedProfiles,
+      });
+      alert(`Selected Profiles: ${selectedProfiles.join(', ')}`);
+      onClose(); // Close the modal after submission
+    } catch (error) {
+      console.error('Failed to assign profiles:', error);
+    }
   };
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
       <div className="bg-white p-6 rounded-lg shadow-md w-9/12">
         <h3 className="text-xl font-bold mb-4">Requirement Details</h3>
-        <p className="mb-6">{requirement}</p>
+        <p className="mb-6">{requirement.title}</p>
 
-        <h4 className="text-lg font-bold mb-4">Matching Profiles</h4>
+        <h4 className="text-lg font-bold mb-4">Available Profiles</h4>
         <ul className="space-y-4">
-          {dummyProfiles.map((profile) => (
+          {profiles.map((profile) => (
             <li
-              key={profile.id}
+              key={profile._id}
               className={`p-4 rounded-lg shadow-md flex justify-between ${
-                selectedProfiles.includes(profile.id) ? 'bg-green-100' : 'bg-white'
+                selectedProfiles.includes(profile._id) ? 'bg-green-100' : 'bg-white'
               }`}
             >
               <div>
-                <h3 className="text-xl font-semibold">{profile.name}</h3>
-                <p className="text-gray-600">Skills: {profile.skills}</p>
+                <h3 className="text-xl font-semibold">{profile?.title}</h3>
+                <p className="text-gray-600">Skills: {profile?.skills?.join(', ')}</p>
               </div>
               <button
-                onClick={() => handleSelectProfile(profile.id)}
+                onClick={() => handleSelectProfile(profile._id)}
                 className={`px-4 py-2 rounded-md ${
-                  selectedProfiles.includes(profile.id)
+                  selectedProfiles.includes(profile._id)
                     ? 'bg-red-500 text-white'
                     : 'bg-blue-500 text-white'
                 }`}
               >
-                {selectedProfiles.includes(profile.id) ? 'Deselect' : 'Select'}
+                {selectedProfiles.includes(profile._id) ? 'Deselect' : 'Select'}
               </button>
             </li>
           ))}
