@@ -36,7 +36,7 @@ const PostRequirement = () => {
 
     try {
       if (editIndex !== null) {
-        const updatedRequirement = await API.patch(
+        const updatedRequirement = await API.post(
           `/requirements/${requirements[editIndex]._id}`,
           { title: newRequirement }
         );
