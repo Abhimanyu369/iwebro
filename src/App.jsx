@@ -3,99 +3,106 @@ import Home from "./pages/Home/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Signup from "./pages/Signup";
+import Signin from "./pages/Signin";
 import Hiring from "./pages/Hiring";
 import LandingPage from "./pages/HireNow";
 
 // old
-import Add_benefit from './adminpanel/pages/Add_benefit';
-import Add_access_project from './adminpanel/pages/Add_access_project';
-import Add_service from './adminpanel/pages/Add_service';
-import Add_remote_hiring from './adminpanel/pages/Add_remote_hiring';
-import Add_blog from './adminpanel/pages/Add_blog';
-import Add_client from './adminpanel/pages/Add_client';
-import Add_company from './adminpanel/pages/Add_company';
-import Add_dev from './adminpanel/pages/Add_dev';
-import Add_developer from './adminpanel/pages/Add_developer';
-import Add_event from './adminpanel/pages/Add_event';
-import Add_job from './adminpanel/pages/Add_job';
-import Add_marquee from './adminpanel/pages/Add_marquee';
-import Add_review from './adminpanel/pages/Add_review';
-import Add_skill from './adminpanel/pages/Add_skill';
-import Add_project from './adminpanel/pages/Add_project';
-import Add_testimonial from './adminpanel/pages/Add_testimonial';
-import Add_process from './adminpanel/pages/Add_process';
-import Add_team1 from './adminpanel/pages/Add_team1';
-import Add_team2 from './adminpanel/pages/Add_team2';
-import Add_team_content from './adminpanel/pages/Add_team_content';
-import Admin_profile from './adminpanel/pages/Admin_profile';
-import Blog from './client/pages/Blog';
-import Company from './client/pages/CompnyDetail';
-import Dashboard from './adminpanel/pages/Dashboard';
-import Developer from './client/components/Talent/Developer';
-import DeveloperDetail from './client/pages/DeveloperDetail';
-import Error from './client/pages/Error';
-import Event from './client/pages/Event';
-import Login from './adminpanel/pages/Login';
-import Requirements from './client/pages/Requirements';
-import Reviews from './client/pages/Reviews';
-import StartHire from './client/pages/StartHire';
-import TalentPage from './client/pages/TalentPage';
-import Update_benefit from './adminpanel/pages/Update_benefit';
-import Update_access_project from './adminpanel/pages/Update_access_project';
-import Update_remote_hiring from './adminpanel/pages/Update_remote_hiring';
-import Update_service from './adminpanel/pages/Update_service';
-import Update_blog from './adminpanel/pages/Update_blog';
-import Update_client from './adminpanel/pages/Update_client';
-import Update_company from './adminpanel/pages/Update_company';
-import Update_dev from './adminpanel/pages/Update_dev';
-import Update_developer from './adminpanel/pages/Update_developer';
-import Update_event from './adminpanel/pages/Update_event';
-import Update_job from './adminpanel/pages/Update_job';
-import Update_marquee from './adminpanel/pages/Update_marquee';
-import Update_review from './adminpanel/pages/Update_review';
-import Update_skill from './adminpanel/pages/Update_skill';
-import Update_testimonial from './adminpanel/pages/Update_testimonial';
-import Update_project from './adminpanel/pages/Update_project';
-import Update_process from './adminpanel/pages/Update_process';
-import Update_team1 from './adminpanel/pages/Update_team1';
-import Update_team2 from './adminpanel/pages/Update_team2';
-import Update_team_content from './adminpanel/pages/Update_team_content';
-import Update_apply_developer from './adminpanel/pages/Update_apply_developer';
+import Add_benefit from "./adminpanel/pages/Add_benefit";
+import Add_access_project from "./adminpanel/pages/Add_access_project";
+import Add_service from "./adminpanel/pages/Add_service";
+import Add_remote_hiring from "./adminpanel/pages/Add_remote_hiring";
+import Add_blog from "./adminpanel/pages/Add_blog";
+import Add_client from "./adminpanel/pages/Add_client";
+import Add_company from "./adminpanel/pages/Add_company";
+import Add_dev from "./adminpanel/pages/Add_dev";
+import Add_developer from "./adminpanel/pages/Add_developer";
+import Add_event from "./adminpanel/pages/Add_event";
+import Add_job from "./adminpanel/pages/Add_job";
+import Add_marquee from "./adminpanel/pages/Add_marquee";
+import Add_review from "./adminpanel/pages/Add_review";
+import Add_skill from "./adminpanel/pages/Add_skill";
+import Add_project from "./adminpanel/pages/Add_project";
+import Add_testimonial from "./adminpanel/pages/Add_testimonial";
+import Add_process from "./adminpanel/pages/Add_process";
+import Add_team1 from "./adminpanel/pages/Add_team1";
+import Add_team2 from "./adminpanel/pages/Add_team2";
+import Add_team_content from "./adminpanel/pages/Add_team_content";
+import Admin_profile from "./adminpanel/pages/Admin_profile";
+import Blog from "./client/pages/Blog";
+import Company from "./client/pages/CompnyDetail";
+import Dashboard from "./adminpanel/pages/Dashboard";
+import Developer from "./client/components/Talent/Developer";
+import DeveloperDetail from "./client/pages/DeveloperDetail";
+import Error from "./client/pages/Error";
+import Event from "./client/pages/Event";
+import Login from "./adminpanel/pages/Login";
+import Requirements from "./client/pages/Requirements";
+import Reviews from "./client/pages/Reviews";
+import StartHire from "./client/pages/StartHire";
+import TalentPage from "./client/pages/TalentPage";
+import Update_benefit from "./adminpanel/pages/Update_benefit";
+import Update_access_project from "./adminpanel/pages/Update_access_project";
+import Update_remote_hiring from "./adminpanel/pages/Update_remote_hiring";
+import Update_service from "./adminpanel/pages/Update_service";
+import Update_blog from "./adminpanel/pages/Update_blog";
+import Update_client from "./adminpanel/pages/Update_client";
+import Update_company from "./adminpanel/pages/Update_company";
+import Update_dev from "./adminpanel/pages/Update_dev";
+import Update_developer from "./adminpanel/pages/Update_developer";
+import Update_event from "./adminpanel/pages/Update_event";
+import Update_job from "./adminpanel/pages/Update_job";
+import Update_marquee from "./adminpanel/pages/Update_marquee";
+import Update_review from "./adminpanel/pages/Update_review";
+import Update_skill from "./adminpanel/pages/Update_skill";
+import Update_testimonial from "./adminpanel/pages/Update_testimonial";
+import Update_project from "./adminpanel/pages/Update_project";
+import Update_process from "./adminpanel/pages/Update_process";
+import Update_team1 from "./adminpanel/pages/Update_team1";
+import Update_team2 from "./adminpanel/pages/Update_team2";
+import Update_team_content from "./adminpanel/pages/Update_team_content";
+import Update_apply_developer from "./adminpanel/pages/Update_apply_developer";
 
-import View_benefit from './adminpanel/pages/View_benefit';
-import View_access_project from './adminpanel/pages/View_access_project';
-import View_remote_hiring from './adminpanel/pages/View_remote_hiring';
-import View_service from './adminpanel/pages/View_service';
-import View_client from './adminpanel/pages/View_client';
-import View_blog from './adminpanel/pages/View_blog';
-import View_company from './adminpanel/pages/View_company';
-import View_dev from './adminpanel/pages/View_dev';
-import View_developer from './adminpanel/pages/View_developer';
-import View_event from './adminpanel/pages/View_event';
-import View_job from './adminpanel/pages/View_job';
-import View_marquee from './adminpanel/pages/View_marquee';
-import View_skill from './adminpanel/pages/View_skill';
-import View_testimonial from './adminpanel/pages/View_testimonial';
-import View_review from './adminpanel/pages/View_review';
-import View_hire from './adminpanel/pages/View_hire';
-import View_process from './adminpanel/pages/View_process';
-import View_project from './adminpanel/pages/View_project';
-import View_team1 from './adminpanel/pages/View_team1';
-import View_team2 from './adminpanel/pages/View_team2';
+import View_benefit from "./adminpanel/pages/View_benefit";
+import View_access_project from "./adminpanel/pages/View_access_project";
+import View_remote_hiring from "./adminpanel/pages/View_remote_hiring";
+import View_service from "./adminpanel/pages/View_service";
+import View_client from "./adminpanel/pages/View_client";
+import View_blog from "./adminpanel/pages/View_blog";
+import View_company from "./adminpanel/pages/View_company";
+import View_dev from "./adminpanel/pages/View_dev";
+import View_developer from "./adminpanel/pages/View_developer";
+import View_event from "./adminpanel/pages/View_event";
+import View_job from "./adminpanel/pages/View_job";
+import View_marquee from "./adminpanel/pages/View_marquee";
+import View_skill from "./adminpanel/pages/View_skill";
+import View_testimonial from "./adminpanel/pages/View_testimonial";
+import View_review from "./adminpanel/pages/View_review";
+import View_hire from "./adminpanel/pages/View_hire";
+import View_process from "./adminpanel/pages/View_process";
+import View_project from "./adminpanel/pages/View_project";
+import View_team1 from "./adminpanel/pages/View_team1";
+import View_team2 from "./adminpanel/pages/View_team2";
 
-import AddDeveloper from './talentpanel/pages/Add_developer';
-import TalentDashboard from './talentpanel/pages/Dashboard';
-import LoginTalent from './talentpanel/pages/Login_talent';
-import EditDeveloper from './talentpanel/pages/Update_developer';
-import ViewDeveloper from './talentpanel/pages/View_developer';
-import AddRequirement from './talentpanel/pages/Add_requirement';
-import UpdateRequirement from './talentpanel/pages/Update_requirement';
-import ViewRequirement from './talentpanel/pages/View_requirement';
-import Talent_profile from './talentpanel/pages/Talent_profile';
-import Job_profile from './adminpanel/pages/Job_profile';
-import Developer_profile from './adminpanel/pages/Developer_profile';
-import View_team_content from './adminpanel/pages/View_team_content';
-import View_apply_developer from './adminpanel/pages/View_apply_developer ';
+import AddDeveloper from "./talentpanel/pages/Add_developer";
+import TalentDashboard from "./talentpanel/pages/Dashboard";
+import LoginTalent from "./talentpanel/pages/Login_talent";
+import EditDeveloper from "./talentpanel/pages/Update_developer";
+import ViewDeveloper from "./talentpanel/pages/View_developer";
+import AddRequirement from "./talentpanel/pages/Add_requirement";
+import UpdateRequirement from "./talentpanel/pages/Update_requirement";
+import ViewRequirement from "./talentpanel/pages/View_requirement";
+import Talent_profile from "./talentpanel/pages/Talent_profile";
+import Job_profile from "./adminpanel/pages/Job_profile";
+import Developer_profile from "./adminpanel/pages/Developer_profile";
+import View_team_content from "./adminpanel/pages/View_team_content";
+import View_apply_developer from "./adminpanel/pages/View_apply_developer ";
+import ClientDashboard from "./pages/client/ClientDashboard";
+import VendorDashboard from "./pages/vendor/VendorDashboard";
+import PostRequirement from "./pages/client/PostRequirement";
+import MatchingProfiles from "./pages/client/MatchingProfiles";
+import AssignedJobs from "./pages/vendor/AssignedJobs";
+import UploadProfile from "./pages/vendor/UploadProfile";
 
 function App() {
   return (
@@ -115,6 +122,19 @@ function App() {
           <Route path="/hiring" element={<Hiring />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/hire-now" element={<LandingPage />} />
+          <Route path="/signin" element={<Signin />} />
+
+          {/* Client Dashboard Routes */}
+          <Route path="/client-dashboard" element={<ClientDashboard />}>
+            <Route path="post-requirement" element={<PostRequirement />} />
+            <Route path="matching-profiles" element={<MatchingProfiles />} />
+          </Route>
+
+          {/* Vendor Dashboard Routes */}
+          <Route path="/vendor-dashboard" element={<VendorDashboard />}>
+            <Route path="assigned-jobs" element={<AssignedJobs />} />
+            <Route path="upload-profile" element={<UploadProfile />} />
+          </Route>
 
           {/* old */}
           <Route path="/active-requirements" Component={Requirements} />

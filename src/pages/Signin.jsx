@@ -1,39 +1,34 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const Signup = () => {
-  const [name, setName] = useState('');
+const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [role, setRole] = useState('client');
+  const [role, setRole] = useState('client'); 
   const navigate = useNavigate();
 
-  const handleSignup = (e) => {
+  const handleLogin = (e) => {
     e.preventDefault();
-    navigate('/');
+    if (role === 'client') {
+      navigate('/client-dashboard');
+    } else {
+      navigate('/vendor-dashboard');
+    }
   };
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
       <form
-        onSubmit={handleSignup}
+        onSubmit={handleLogin}
         className="bg-white p-6 rounded-lg shadow-md w-80"
       >
-        <h2 className="text-xl font-bold mb-4">Signup</h2>
-        <input
-          type="text"
-          placeholder="Name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          className="w-full mb-3 px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
-          required
-        />
+        <h2 className="text-xl font-bold mb-4">Login</h2>
         <input
           type="email"
           placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="w-full mb-3 px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+          className="w-full mb-3 px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
           required
         />
         <input
@@ -41,7 +36,7 @@ const Signup = () => {
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="w-full mb-3 px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+          className="w-full mb-3 px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
           required
         />
         <select
@@ -54,13 +49,13 @@ const Signup = () => {
         </select>
         <button
           type="submit"
-          className="w-full bg-green-500 text-white py-2 rounded-md hover:bg-green-600 transition"
+          className="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition"
         >
-          Signup
+          Login
         </button>
       </form>
     </div>
   );
 };
 
-export default Signup;
+export default Login;
