@@ -11,8 +11,12 @@ const VendorDashboardLayout = () => {
   const notificationRef = useRef(null);
 
   const handleLogout = () => {
-    localStorage.clear();
-    navigate('/'); // Redirect to login
+    // Clear only relevant localStorage items
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+  
+    // Redirect to login page and replace history
+    navigate('/signin', { replace: true });
   };
 
   // Handle clicks outside the dropdowns to close them

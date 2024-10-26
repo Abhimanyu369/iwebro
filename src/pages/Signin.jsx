@@ -1,18 +1,32 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import API from '../api/axios'; // Import your Axios instance
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [role, setRole] = useState('client'); 
+  const [role, setRole] = useState('client');
+  const [error, setError] = useState('');
   const navigate = useNavigate();
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    if (role === 'client') {
-      navigate('/client-dashboard');
-    } else {
-      navigate('/vendor-dashboard');
+    try {
+      const response = await API.post('/users/signin', { email, password });
+      const { token, user } = response.data;
+
+      // Store token and user info in localStorage
+      localStorage.setItem('token', token);
+      localStorage.setItem('user', JSON.stringify(user));
+
+      // Navigate to the appropriate dashboard based on the role
+      if (user.role === 'client') {
+        navigate('/client-dashboard');
+      } else {
+        navigate('/vendor-dashboard');
+      }
+    } catch (error) {
+      setError(error.response?.data?.message || 'Login failed. Please try again.');
     }
   };
 
@@ -23,6 +37,7 @@ const Login = () => {
         className="bg-white p-6 rounded-lg shadow-md w-80"
       >
         <h2 className="text-xl font-bold mb-4">Login</h2>
+        {error && <p className="text-red-500 mb-3">{error}</p>}
         <input
           type="email"
           placeholder="Email"

@@ -1,16 +1,30 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import API from '../api/axios'; // Import your Axios instance
 
 const Signup = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [role, setRole] = useState('client');
+  const [error, setError] = useState('');
   const navigate = useNavigate();
 
-  const handleSignup = (e) => {
+  const handleSignup = async (e) => {
     e.preventDefault();
-    navigate('/');
+    try {
+      await API.post('/users/signup', {
+        name,
+        email,
+        password,
+        role,
+      });
+
+      alert('Signup successful! Please log in.');
+      navigate('/signin'); // Redirect to signin page
+    } catch (error) {
+      setError(error.response?.data?.message || 'Signup failed. Please try again.');
+    }
   };
 
   return (
@@ -20,6 +34,7 @@ const Signup = () => {
         className="bg-white p-6 rounded-lg shadow-md w-80"
       >
         <h2 className="text-xl font-bold mb-4">Signup</h2>
+        {error && <p className="text-red-500 mb-3">{error}</p>}
         <input
           type="text"
           placeholder="Name"

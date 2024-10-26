@@ -103,6 +103,7 @@ import PostRequirement from "./pages/client/PostRequirement";
 import MatchingProfiles from "./pages/client/MatchingProfiles";
 import AssignedJobs from "./pages/vendor/AssignedJobs";
 import UploadProfile from "./pages/vendor/UploadProfile";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
   return (
@@ -125,13 +126,27 @@ function App() {
           <Route path="/signin" element={<Signin />} />
 
           {/* Client Dashboard Routes */}
-          <Route path="/client-dashboard" element={<ClientDashboard />}>
+          <Route
+            path="/client-dashboard"
+            element={
+              <ProtectedRoute>
+                <ClientDashboard />
+              </ProtectedRoute>
+            }
+          >
             <Route path="post-requirement" element={<PostRequirement />} />
             <Route path="matching-profiles" element={<MatchingProfiles />} />
           </Route>
 
           {/* Vendor Dashboard Routes */}
-          <Route path="/vendor-dashboard" element={<VendorDashboard />}>
+          <Route
+            path="/vendor-dashboard"
+            element={
+              <ProtectedRoute>
+                <VendorDashboard />
+              </ProtectedRoute>
+            }
+          >
             <Route path="assigned-jobs" element={<AssignedJobs />} />
             <Route path="upload-profile" element={<UploadProfile />} />
           </Route>
