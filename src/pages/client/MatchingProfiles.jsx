@@ -3,8 +3,10 @@ import { useState, useEffect } from 'react';
 import API from '../../api/axios'; // Axios instance
 
 const MatchingProfilesModal = ({ requirement, onClose }) => {
-  const [profiles, setProfiles] = useState([]); // Store fetched profiles
-  const [selectedProfiles, setSelectedProfiles] = useState([]);
+  const [profiles, setProfiles] = useState([]); // All available profiles
+  const [selectedProfiles, setSelectedProfiles] = useState(
+    requirement.selectedProfiles.map((profile) => profile._id) || []
+  );
 
   // Fetch all profiles when the modal opens
   useEffect(() => {
@@ -13,7 +15,7 @@ const MatchingProfilesModal = ({ requirement, onClose }) => {
 
   const fetchAllProfiles = async () => {
     try {
-      const response = await API.get('/profiles'); // Fetch all vendor profiles
+      const response = await API.get('/profiles'); // Get all vendor profiles
       setProfiles(response.data);
     } catch (error) {
       console.error('Failed to fetch profiles:', error);
@@ -30,14 +32,22 @@ const MatchingProfilesModal = ({ requirement, onClose }) => {
 
   const handleSubmit = async () => {
     try {
-      // Submit selected profiles to the backend (if required)
-      await API.post(`/requirements/${requirement._id}/assign-profiles`, {
+      const payload = {
+        title: requirement.title, // Use the requirement title for the job
         profiles: selectedProfiles,
-      });
-      alert(`Selected Profiles: ${selectedProfiles.join(', ')}`);
-      onClose(); // Close the modal after submission
+      };
+
+      // Create a new job from the selected profiles
+      await API.post(
+        '/jobs', 
+        payload, 
+        { headers: { 'Content-Type': 'application/json' } }
+      );
+
+      alert('Job created successfully!');
+      onClose();
     } catch (error) {
-      console.error('Failed to assign profiles:', error);
+      console.error('Failed to create job:', error);
     }
   };
 
@@ -57,8 +67,8 @@ const MatchingProfilesModal = ({ requirement, onClose }) => {
               }`}
             >
               <div>
-                <h3 className="text-xl font-semibold">{profile?.title}</h3>
-                <p className="text-gray-600">Skills: {profile?.skills?.join(', ')}</p>
+                <h3 className="text-xl font-semibold">{profile.name}</h3>
+                <p className="text-gray-600">Skills: {(profile.skills || []).join(', ')}</p>
               </div>
               <button
                 onClick={() => handleSelectProfile(profile._id)}

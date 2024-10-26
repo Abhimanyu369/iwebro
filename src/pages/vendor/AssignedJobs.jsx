@@ -12,7 +12,7 @@ const AssignedJobs = () => {
 
   const fetchAssignedJobs = async () => {
     try {
-      const response = await API.get('/jobs/assigned'); // API call to fetch jobs
+      const response = await API.get('/jobs'); // API call to fetch jobs
       setJobs(response.data);
     } catch (error) {
       console.error('Failed to fetch assigned jobs:', error);
