@@ -1,10 +1,11 @@
-import { NavLink, Outlet, useNavigate } from 'react-router-dom';
-import { useState, useEffect, useRef } from 'react';
-import { FaBell, FaUserCircle } from 'react-icons/fa';
+import { NavLink, Outlet, useNavigate } from "react-router-dom";
+import { useState, useEffect, useRef } from "react";
+import { FaBell, FaUserCircle } from "react-icons/fa";
 
 const ClientDashboardLayout = () => {
   const [isProfileDropdownOpen, setIsProfileDropdownOpen] = useState(false);
-  const [isNotificationDropdownOpen, setIsNotificationDropdownOpen] = useState(false);
+  const [isNotificationDropdownOpen, setIsNotificationDropdownOpen] =
+    useState(false);
   const navigate = useNavigate();
 
   const profileRef = useRef(null);
@@ -12,11 +13,11 @@ const ClientDashboardLayout = () => {
 
   const handleLogout = () => {
     // Clear only relevant localStorage items
-    localStorage.removeItem('token');
-    localStorage.removeItem('user');
-  
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+
     // Redirect to login page and replace history
-    navigate('/signin', { replace: true });
+    navigate("/signin", { replace: true });
   };
 
   // Handle clicks outside the dropdowns to close them
@@ -32,9 +33,9 @@ const ClientDashboardLayout = () => {
         setIsNotificationDropdownOpen(false);
       }
     };
-    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
 
@@ -65,9 +66,15 @@ const ClientDashboardLayout = () => {
               <div className="absolute right-0 mt-2 w-64 bg-white text-black rounded-lg shadow-lg">
                 <p className="p-4 border-b">You have 3 new notifications</p>
                 <ul className="p-2 space-y-2">
-                  <li className="hover:bg-gray-100 p-2 rounded">Notification 1</li>
-                  <li className="hover:bg-gray-100 p-2 rounded">Notification 2</li>
-                  <li className="hover:bg-gray-100 p-2 rounded">Notification 3</li>
+                  <li className="hover:bg-gray-100 p-2 rounded">
+                    Notification 1
+                  </li>
+                  <li className="hover:bg-gray-100 p-2 rounded">
+                    Notification 2
+                  </li>
+                  <li className="hover:bg-gray-100 p-2 rounded">
+                    Notification 3
+                  </li>
                 </ul>
               </div>
             )}
@@ -84,7 +91,7 @@ const ClientDashboardLayout = () => {
                 <ul className="p-2 space-y-2">
                   <li
                     className="hover:bg-gray-100 p-2 rounded cursor-pointer"
-                    onClick={() => navigate('/update-profile')}
+                    onClick={() => navigate("/update-profile")}
                   >
                     Update Profile
                   </li>
@@ -110,11 +117,11 @@ const ClientDashboardLayout = () => {
               to="post-requirement"
               className={({ isActive }) =>
                 `block px-3 py-2 rounded ${
-                  isActive ? 'bg-gray-700' : 'hover:bg-gray-700'
+                  isActive ? "bg-gray-700" : "hover:bg-gray-700"
                 }`
               }
             >
-              Post Requirement
+              Requirements
             </NavLink>
           </nav>
         </aside>

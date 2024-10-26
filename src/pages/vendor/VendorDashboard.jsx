@@ -113,7 +113,7 @@ const VendorDashboardLayout = () => {
                 }`
               }
             >
-              View Assigned Jobs
+              Assigned Jobs
             </NavLink>
 
             <NavLink
