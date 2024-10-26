@@ -53,7 +53,7 @@ const AssignedJobs = () => {
             <h4 className="text-lg font-semibold mb-2">Assigned Profiles</h4>
             <ul className="list-disc list-inside space-y-2">
               {selectedJob.profiles.map((profile) => (
-                <li key={profile._id}>{profile?.name}</li>
+                <li key={profile._id}>{profile?.title}</li>
               ))}
             </ul>
             <button
