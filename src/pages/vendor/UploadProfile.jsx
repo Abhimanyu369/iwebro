@@ -1,12 +1,8 @@
-import { useState } from 'react';
-
-const dummyProfiles = [
-  { id: 1, title: 'John Doe', status: 'ENGAGED', jobs: ['Frontend Development'] },
-  { id: 2, title: 'Jane Smith', status: 'AVAILABLE', jobs: [] },
-];
+import { useState, useEffect } from 'react';
+import API from '../../api/axios'; // Axios instance
 
 const UploadProfile = () => {
-  const [profiles, setProfiles] = useState(dummyProfiles);
+  const [profiles, setProfiles] = useState([]);
   const [newProfile, setNewProfile] = useState('');
   const [selectedFile, setSelectedFile] = useState(null);
   const [isUploadModalOpen, setIsUploadModalOpen] = useState(false);
@@ -14,22 +10,39 @@ const UploadProfile = () => {
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
   const [profileToDelete, setProfileToDelete] = useState(null);
 
+  // Fetch profiles on component mount
+  useEffect(() => {
+    fetchProfiles();
+  }, []);
+
+  const fetchProfiles = async () => {
+    try {
+      const response = await API.get('/profiles');
+      setProfiles(response.data);
+    } catch (error) {
+      console.error('Failed to fetch profiles:', error);
+    }
+  };
+
   const handleFileUpload = (e) => {
     setSelectedFile(e.target.files[0]);
   };
 
-  const handleUploadProfile = () => {
-    if (newProfile.trim() && selectedFile) {
-      const newProfileEntry = {
-        id: profiles.length + 1,
-        title: newProfile,
-        status: 'AVAILABLE',
-        jobs: [],
-      };
-      setProfiles([...profiles, newProfileEntry]);
+  const handleUploadProfile = async () => {
+    if (!newProfile.trim() || !selectedFile) return;
+
+    const formData = new FormData();
+    formData.append('title', newProfile);
+    formData.append('file', selectedFile);
+
+    try {
+      await API.post('/profiles', formData);
+      fetchProfiles(); // Refresh the profile list
       setNewProfile('');
       setSelectedFile(null);
       setIsUploadModalOpen(false); // Close modal after upload
+    } catch (error) {
+      console.error('Failed to upload profile:', error);
     }
   };
 
@@ -42,17 +55,21 @@ const UploadProfile = () => {
     setIsDeleteModalOpen(true);
   };
 
-  const handleDeleteProfile = () => {
-    setProfiles(profiles.filter((p) => p.id !== profileToDelete.id));
-    setIsDeleteModalOpen(false);
-    setProfileToDelete(null);
+  const handleDeleteProfile = async () => {
+    try {
+      await API.delete(`/profiles/${profileToDelete._id}`);
+      fetchProfiles(); // Refresh the profile list
+      setIsDeleteModalOpen(false);
+      setProfileToDelete(null);
+    } catch (error) {
+      console.error('Failed to delete profile:', error);
+    }
   };
 
   return (
     <div className="p-8">
       <h2 className="text-2xl font-bold mb-4">Upload Profiles</h2>
 
-      {/* Upload Profile Button */}
       <button
         onClick={() => setIsUploadModalOpen(true)}
         className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition mb-6"
@@ -63,7 +80,7 @@ const UploadProfile = () => {
       <h3 className="text-xl font-bold mb-4">Uploaded Profiles</h3>
       <ul className="space-y-4">
         {profiles.map((profile) => (
-          <li key={profile.id} className="bg-white p-4 rounded-lg shadow-md flex justify-between">
+          <li key={profile._id} className="bg-white p-4 rounded-lg shadow-md flex justify-between">
             <div>
               <h3 className="text-xl font-semibold">{profile.title}</h3>
               <p className="text-gray-600">Status: {profile.status}</p>
@@ -86,7 +103,6 @@ const UploadProfile = () => {
         ))}
       </ul>
 
-      {/* Upload Profile Modal */}
       {isUploadModalOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
           <div className="bg-white p-6 rounded-lg shadow-md w-[500px]">
@@ -117,7 +133,6 @@ const UploadProfile = () => {
         </div>
       )}
 
-      {/* Profile Details Modal */}
       {selectedProfile && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
           <div className="bg-white p-6 rounded-lg shadow-md w-[500px]">
@@ -143,7 +158,6 @@ const UploadProfile = () => {
         </div>
       )}
 
-      {/* Delete Confirmation Modal */}
       {isDeleteModalOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
           <div className="bg-white p-6 rounded-lg shadow-md w-[400px]">
