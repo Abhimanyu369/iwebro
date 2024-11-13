@@ -1,10 +1,10 @@
 import { useRef } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
 import { IoIosStar } from "react-icons/io";
+import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
-import "./slider.css"; // Add necessary custom CSS
 import "swiper/css/autoplay";
+import "./slider.css"; // Add necessary custom CSS
 
 const CardSlider = () => {
   const swiperRef = useRef(null);
@@ -75,7 +75,7 @@ const CardSlider = () => {
   ];
 
   return (
-    <div>
+    <div className="max-w-6xl mx-auto">
       <div className="flex flex-col gap-1 col-span-12 text-gray-600 bg-transparent text-start pb-8 md:pb-10">
         <h2
           className="heading-sm text-4xl text-center md:heading-lg font-normal 2xl:heading-xl text-gray-900"
@@ -92,7 +92,7 @@ const CardSlider = () => {
         <Swiper
           modules={[Autoplay]}
           spaceBetween={30}
-          slidesPerView={3}
+          slidesPerView={2}
           loop={true}
           autoplay={{
             delay: 2000,
@@ -127,14 +127,14 @@ const CardSlider = () => {
                 </div>
                 <div className="flex gap-2 mt-4">
                   {card?.techStack?.map((item, itemIndex) => (
-                    <div className="border py-1 px-2 rounded" key={itemIndex}>
+                    <div className="border py-1 px-2 rounded text-xs" key={itemIndex}>
                       {item}
                     </div>
                   ))}
                 </div>
                 <div className="description mb-2">{card.description}</div>
                 <hr />
-                <div className="mt-3 flex justify-between">
+                <div className="mt-3 flex justify-between text-sm">
                   <p>
                     Experience:{" "}
                     <span className="font-bold">{card.experience}</span>

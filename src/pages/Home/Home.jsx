@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/autoplay";
 import Benefits from "../../components/Benefits/Benefits";
-import Cards from "../../components/Cards/Cards";
 import Flow from "../../components/Flow/Flow";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
@@ -38,7 +41,7 @@ function Home() {
       <Flow />
       <Hiring />
       <HomeCards />
-      <div className="my-12">
+      <div className="my-12 max-w-6xl mx-auto">
         <div className="flex flex-col gap-1 col-span-12 text-gray-600 bg-transparent text-start pb-8 md:pb-10">
           <h2
             className="heading-sm text-4xl text-center md:heading-lg font-normal 2xl:heading-xl text-gray-900"
@@ -47,17 +50,26 @@ function Home() {
             <span className="text-[#0e8ac8]">Our team</span> attending/speaking
           </h2>
         </div>
-        <div className="max-w-screen-xl mx-auto flex gap-4">
-          <div>
-            <img src="/img1.jpg" className="h-auto w-full" />
-          </div>
-          <div>
-            <img src="/img2.jpg" className="h-auto w-full" />
-          </div>
-          <div>
-            <img src="/img3.jpg" className="h-auto w-full" />
-          </div>
+        <div>
+          <Swiper
+            modules={[Autoplay]}
+            spaceBetween={30}
+            slidesPerView={2}
+            loop={true}
+            autoplay={{
+              delay: 18000,
+            }}
+          >
+            {[1, 2, 3, 4, 5, 6, 7].map((img, index) => (
+              <SwiperSlide key={index}>
+                <div className="h-96 w-full">
+                  <img src={`/img${img}.jpg`} className={`h-full w-full object-cover ${index === 3 ? "" : "object-top"}`} />
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
+        <div className="max-w-screen-xl mx-auto flex gap-4"></div>
       </div>
       <WeServe />
       <Footer />
