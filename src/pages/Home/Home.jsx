@@ -57,7 +57,7 @@ function Home() {
             slidesPerView={2}
             loop={true}
             autoplay={{
-              delay: 18000,
+              delay: 5000,
             }}
           >
             {[1, 2, 3, 4, 5, 6, 7].map((img, index) => (
