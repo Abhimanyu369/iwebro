@@ -1,9 +1,14 @@
-import { useState, useEffect } from 'react';
-import API from '../../api/axios'; // Axios instance
+import { useState, useEffect } from "react";
+import API from "../../api/axios"; // Axios instance
 
 const UploadProfile = () => {
   const [profiles, setProfiles] = useState([]);
-  const [newProfile, setNewProfile] = useState('');
+  const [newProfile, setNewProfile] = useState({
+    name: "",
+    techStacks: "",
+    experience: "",
+    passingYear: "",
+  });
   const [selectedFile, setSelectedFile] = useState(null);
   const [isUploadModalOpen, setIsUploadModalOpen] = useState(false);
   const [selectedProfile, setSelectedProfile] = useState(null);
@@ -17,11 +22,16 @@ const UploadProfile = () => {
 
   const fetchProfiles = async () => {
     try {
-      const response = await API.get('/profiles');
+      const response = await API.get("/profiles");
       setProfiles(response.data);
     } catch (error) {
-      console.error('Failed to fetch profiles:', error);
+      console.error("Failed to fetch profiles:", error);
     }
+  };
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setNewProfile({ ...newProfile, [name]: value });
   };
 
   const handleFileUpload = (e) => {
@@ -29,20 +39,39 @@ const UploadProfile = () => {
   };
 
   const handleUploadProfile = async () => {
-    if (!newProfile.trim() || !selectedFile) return;
+    if (
+      !newProfile.name.trim() ||
+      !newProfile.techStacks.trim() ||
+      !newProfile.experience.trim() ||
+      !newProfile.passingYear.trim() ||
+      !selectedFile
+    ) {
+      alert("All fields are required!");
+      return;
+    }
 
     const formData = new FormData();
-    formData.append('title', newProfile);
-    formData.append('file', selectedFile);
+    formData.append("name", newProfile.name);
+    formData.append("techStacks", newProfile.techStacks);
+    formData.append("experience", newProfile.experience);
+    formData.append("passingYear", newProfile.passingYear);
+    formData.append("file", selectedFile);
 
     try {
-      await API.post('/profiles', formData);
+      await API.post("/profiles", formData, {
+        headers: { "Content-Type": "multipart/form-data" },
+      });
       fetchProfiles(); // Refresh the profile list
-      setNewProfile('');
+      setNewProfile({
+        name: "",
+        techStacks: "",
+        experience: "",
+        passingYear: "",
+      });
       setSelectedFile(null);
       setIsUploadModalOpen(false); // Close modal after upload
     } catch (error) {
-      console.error('Failed to upload profile:', error);
+      console.error("Failed to upload profile:", error);
     }
   };
 
@@ -62,7 +91,7 @@ const UploadProfile = () => {
       setIsDeleteModalOpen(false);
       setProfileToDelete(null);
     } catch (error) {
-      console.error('Failed to delete profile:', error);
+      console.error("Failed to delete profile:", error);
     }
   };
 
@@ -80,10 +109,13 @@ const UploadProfile = () => {
       <h3 className="text-xl font-bold mb-4">Uploaded Profiles</h3>
       <ul className="space-y-4">
         {profiles.map((profile) => (
-          <li key={profile._id} className="bg-white p-4 rounded-lg shadow-md flex justify-between">
+          <li
+            key={profile._id}
+            className="bg-white p-4 rounded-lg shadow-md flex justify-between"
+          >
             <div>
-              <h3 className="text-xl font-semibold">{profile.title}</h3>
-              <p className="text-gray-600">Status: {profile.status}</p>
+              <h3 className="text-xl font-semibold">{profile?.name}</h3>
+              <p className="text-gray-600">Status: {profile?.status}</p>
             </div>
             <div className="space-x-4">
               <button
@@ -109,12 +141,43 @@ const UploadProfile = () => {
             <h3 className="text-xl font-bold mb-4">Upload Profile</h3>
             <input
               type="text"
-              placeholder="Profile Title"
-              value={newProfile}
-              onChange={(e) => setNewProfile(e.target.value)}
+              name="name"
+              placeholder="Name"
+              value={newProfile.name}
+              onChange={handleInputChange}
               className="w-full mb-4 px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
-            <input type="file" accept=".pdf" onChange={handleFileUpload} className="mb-4" />
+            <input
+              type="text"
+              name="techStacks"
+              placeholder="Tech Stacks (comma-separated)"
+              value={newProfile.techStacks}
+              onChange={handleInputChange}
+              className="w-full mb-4 px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+            <input
+              type="number"
+              name="experience"
+              placeholder="Years of Experience"
+              value={newProfile.experience}
+              onChange={handleInputChange}
+              className="w-full mb-4 px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+            <input
+              type="number"
+              name="passingYear"
+              placeholder="Graduate Passing Year"
+              value={newProfile.passingYear}
+              onChange={handleInputChange}
+              className="w-full mb-4 px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+            <input
+              type="file"
+              name="file"
+              accept=".pdf"
+              onChange={handleFileUpload}
+              className="mb-4"
+            />
             <div className="flex justify-end space-x-4">
               <button
                 onClick={() => setIsUploadModalOpen(false)}
@@ -136,8 +199,31 @@ const UploadProfile = () => {
       {selectedProfile && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
           <div className="bg-white p-6 rounded-lg shadow-md w-[500px]">
-            <h3 className="text-xl font-bold mb-4">{selectedProfile.title}</h3>
-            <p className="mb-4">Status: {selectedProfile.status}</p>
+            <h3 className="text-xl font-bold mb-2">{selectedProfile?.name}</h3>
+            <div className="flex justify-between">
+              <div>
+                <p className="mb-1 text-sm">Status: {selectedProfile.status}</p>
+                <p className="mb-1 text-sm">
+                  Tech Stack: {selectedProfile.techStacks}
+                </p>
+              </div>
+              <div>
+                <p className="mb-1 text-sm">
+                  Experience: {selectedProfile.experience}
+                </p>
+                <p className="mb-4 text-sm">
+                  Passing Year: {selectedProfile.passingYear}
+                </p>
+              </div>
+            </div>
+            <h4 className="text-md font-semibold mb-2">Resume Preview</h4>
+            <div className="mb-4 max-h-64 overflow-y-auto">
+              <embed
+                src={`http://localhost:8081/${selectedProfile.file}`}
+                type="application/pdf"
+                className="w-full h-[500px] border rounded-md"
+              />
+            </div>
             <h4 className="text-lg font-semibold mb-2">Jobs</h4>
             {selectedProfile.jobs.length > 0 ? (
               <ul className="list-disc list-inside space-y-2">

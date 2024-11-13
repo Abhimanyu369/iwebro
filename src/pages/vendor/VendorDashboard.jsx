@@ -106,6 +106,17 @@ const VendorDashboardLayout = () => {
         <aside className="w-64 bg-gray-800 text-white flex flex-col justify-between p-6">
           <nav className="space-y-4">
             <NavLink
+              to="./"
+              className={({ isActive }) =>
+                `block px-3 py-2 rounded ${
+                  isActive ? 'bg-gray-700' : 'hover:bg-gray-700'
+                }`
+              }
+            >
+              Dashboard
+            </NavLink>
+
+            <NavLink
               to="assigned-jobs"
               className={({ isActive }) =>
                 `block px-3 py-2 rounded ${

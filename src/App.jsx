@@ -101,6 +101,8 @@ import ClientDashboard from "./pages/client/ClientDashboard";
 import VendorDashboard from "./pages/vendor/VendorDashboard";
 import PostRequirement from "./pages/client/PostRequirement";
 import MatchingProfiles from "./pages/client/MatchingProfiles";
+import ClientDashboardPage from "./pages/client/Dashboard";
+import VendorDashboardPage from "./pages/vendor/Dashboard";
 import AssignedJobs from "./pages/vendor/AssignedJobs";
 import UploadProfile from "./pages/vendor/UploadProfile";
 import ProtectedRoute from "./components/ProtectedRoute";
@@ -134,6 +136,7 @@ function App() {
               </ProtectedRoute>
             }
           >
+            <Route path="" element={<ClientDashboardPage />} />
             <Route path="post-requirement" element={<PostRequirement />} />
             <Route path="matching-profiles" element={<MatchingProfiles />} />
           </Route>
@@ -147,6 +150,7 @@ function App() {
               </ProtectedRoute>
             }
           >
+            <Route path="" element={<VendorDashboardPage />} />
             <Route path="assigned-jobs" element={<AssignedJobs />} />
             <Route path="upload-profile" element={<UploadProfile />} />
           </Route>
