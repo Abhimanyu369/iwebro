@@ -6,7 +6,7 @@ export default function Hero() {
     <div className="hero relative">
       <div className="hero-bg-video-overlay-horizontal"></div>
       <div className="container z-10 relative">
-        <div className="hero-bg-video-left pt-40 mb-20">
+        <div className="hero-bg-video-left pt-40 mb-20 px-6 md:px-0">
           <div className="hero-bg-video-content">
             <h1 className="hero-bg-video-title">
               Hire the Top 5% of professional Talent

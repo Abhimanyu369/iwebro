@@ -24,8 +24,8 @@ function Home() {
       <CardSlider />
       <Benefits />
       <div className="bg-[#0e8ac8] py-8">
-        <div className="max-w-6xl mx-auto flex items-center justify-between">
-          <h3 className="hero-bg-video-title text-3xl mb-0">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between">
+          <h3 className="hero-bg-video-title mb-5 md:mb-0 text-xl md:text-3xl">
             Hire the Top 5% of professional Talent
           </h3>
           <div className="hero-bg-video-btns">
@@ -44,7 +44,7 @@ function Home() {
       <div className="my-12 max-w-6xl mx-auto">
         <div className="flex flex-col gap-1 col-span-12 text-gray-600 bg-transparent text-start pb-8 md:pb-10">
           <h2
-            className="heading-sm text-4xl text-center md:heading-lg font-normal 2xl:heading-xl text-gray-900"
+            className="heading-sm text-2xl md:text-4xl text-center md:heading-lg font-normal 2xl:heading-xl text-gray-900"
             data-testid="usp-title"
           >
             <span className="text-[#0e8ac8]">Our team</span> attending/speaking
@@ -54,10 +54,22 @@ function Home() {
           <Swiper
             modules={[Autoplay]}
             spaceBetween={30}
-            slidesPerView={2}
+            slidesPerView={1}
             loop={true}
             autoplay={{
               delay: 5000,
+            }}
+            breakpoints={{
+              // When window width is >= 640px, show 2 slides
+              640: {
+                slidesPerView: 2,
+                spaceBetween: 30,
+              },
+              // When window width is >= 1024px, show 3 slides
+              1024: {
+                slidesPerView: 2,
+                spaceBetween: 30,
+              },
             }}
           >
             {[1, 2, 3, 4, 5, 6, 7].map((img, index) => (

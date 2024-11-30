@@ -6,9 +6,9 @@ export default function Hiring() {
         <div className="hero-bg-video-overlay-horizontal"></div>
         <div className="container z-10 relative">
           <div className="hero-bg-video-left pt-20 mb-20">
-            <div className="hero-bg-video-content">
+            <div className="hero-bg-video-content px-5 md:px-0">
               <h1 className="hero-bg-video-title">Why 5%?</h1>
-              <p className="hero-bg-video-des">
+              <p className="hero-bg-video-des text-base md:text-xl">
                 Our name "Top Talenz" comes from Top Talent — meaning we
                 constantly strive to find and work with the best from around the
                 world. Our rigorous screening process identifies experts in
@@ -25,11 +25,11 @@ export default function Hiring() {
         ></img>
         <div className="hero-bg-video-overlay-vertical"></div>
       </div>
-      <div className="pt-20">
+      <div className="pt-10 md:pt-20 px-6 md:px-0">
         <div className="max-w-screen-xl mx-auto">
           <div className="flex flex-col gap-1 col-span-12 text-gray-600 bg-transparent text-start pb-16 md:pb-20">
             <h2
-              className="heading-sm text-4xl text-center md:heading-lg font-normal 2xl:heading-xl text-gray-900"
+              className="heading-sm text-2xl md:text-4xl text-center md:heading-lg font-normal 2xl:heading-xl text-gray-900"
               data-testid="usp-title"
             >
               The Top Talenz Screening Process

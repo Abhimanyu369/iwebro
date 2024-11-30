@@ -23,19 +23,19 @@ const countries = [
 
 export default function WeServe() {
   return (
-    <div className="py-12 last:mb-0 bg-gray-50">
+    <div className="px-5 md:px-0 py-8 md:py-12 last:mb-0 bg-gray-50">
       <div className="max-w-screen-xl mx-auto">
-        <h2 className="heading-sm text-4xl text-center md:heading-lg font-normal 2xl:heading-xl text-gray-900">
+        <h2 className="heading-sm text-2xl md:text-4xl text-center md:heading-lg font-normal 2xl:heading-xl text-gray-900">
           Geographies We Serve
         </h2>
         <p className="text-center mt-5 pb-16">
           We can help you with picking out the best people for your company.
         </p>
         <div className="grid grid-cols-2 space-x-6 justify-center">
-          <div>
+          <div className="col-span-2 md:col-span-1">
             <img src="/assets/images/m2.png" alt="serve" className="hue-rotate-[20deg]" />
           </div>
-          <div className="columns-2">
+          <div className="mt-10 md:mt-0 columns-2 col-span-2 md:col-span-1">
             {countries.map((country, index) => (
               <div key={index} className="flex items-center gap-2 mb-3">
                 <img

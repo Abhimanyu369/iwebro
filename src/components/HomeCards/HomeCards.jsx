@@ -48,7 +48,7 @@ const cardsData = [
 ];
 
 const Card = ({ title, description, icon, linkText }) => (
-  <div className={`rounded-md border bg-white p-6 max-w-sm flex flex-col items-center`}>
+  <div className={`rounded-md border bg-white p-6 max-w-sm flex flex-col items-center mx-4 md:mx-0`}>
     <div className={`text-3xl font-thin text-[#0e8ac8] mb-3`}>{icon}</div>
     <h3 className="text-xl mb-2">{title}</h3>
     <p className="text-sm font-light mb-auto text-center">{description}</p>
@@ -61,7 +61,7 @@ const Card = ({ title, description, icon, linkText }) => (
 const HomeCards = () => (
   <div className="py-12 last:mb-0 bg-gray-50">
     <div className="max-w-screen-xl mx-auto">
-      <div className="grid grid-cols-4 space-x-6 justify-center">
+      <div className="grid grid-cols-1 md:grid-cols-4 space-y-5 md:space-y-0 mx-auto md:gap-x-6 justify-center">
         {cardsData.map((card, index) => (
           <Card key={index} {...card} />
         ))}

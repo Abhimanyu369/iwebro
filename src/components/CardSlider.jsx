@@ -78,7 +78,7 @@ const CardSlider = () => {
     <div className="max-w-6xl mx-auto">
       <div className="flex flex-col gap-1 col-span-12 text-gray-600 bg-transparent text-start pb-8 md:pb-10">
         <h2
-          className="heading-sm text-4xl text-center md:heading-lg font-normal 2xl:heading-xl text-gray-900"
+          className="heading-sm text-2xl md:text-4xl text-center md:heading-lg font-normal 2xl:heading-xl text-gray-900"
           data-testid="usp-title"
         >
           Our Top Talents
@@ -92,11 +92,23 @@ const CardSlider = () => {
         <Swiper
           modules={[Autoplay]}
           spaceBetween={30}
-          slidesPerView={2}
+          slidesPerView={1}
           loop={true}
           autoplay={{
             delay: 2000,
             disableOnInteraction: true,
+          }}
+          breakpoints={{
+            // When window width is >= 640px, show 2 slides
+            640: {
+              slidesPerView: 2,
+              spaceBetween: 30,
+            },
+            // When window width is >= 1024px, show 3 slides
+            1024: {
+              slidesPerView: 2,
+              spaceBetween: 30,
+            },
           }}
           onSwiper={(swiper) => console.log(swiper)}
           ref={swiperRef}
@@ -109,18 +121,17 @@ const CardSlider = () => {
                     <img
                       className="w-[80px] h-[80px] object-contain"
                       src={`/img-${index + 1}.png`}
-                      // src="https://assets.toptal.io/images?url=https%3A%2F%2Fbs-uploads.toptal.io%2Fblackfish-uploads%2Fcomponents%2Fimage%2F6052740%2Ffile%2Foptimized%2Fhero_section-big_800x600-transformed-c356edd6d73b572e8806166d85dbead5.png&width=360" // Replace with actual image URL
                       alt="Anuar Heberlein"
                     />
                   </div>
-                  <div className="flex justify-between items-start grow">
+                  <div className="flex flex-col md:flex-row justify-between items-start grow">
                     <div className="flex flex-col justify-start items-start gap-2">
                       <h4 className="text-xs bg-[#0e8ac87a] px-2 py-1 rounded text-white">
                         {card.role}
                       </h4>
-                      <h3 className="text-xl">{card.name}</h3>
+                      <h3 className="text-md md:text-xl">{card.name}</h3>
                     </div>
-                    <div className="text-xs bg-[#0e8ac8] px-2 py-1 rounded text-white flex items-center">
+                    <div className="text-xs bg-[#0e8ac8] px-2 py-1 rounded text-white flex items-center mt-1 md:mt-0">
                       <IoIosStar /> Top Rated
                     </div>
                   </div>
@@ -132,7 +143,7 @@ const CardSlider = () => {
                     </div>
                   ))}
                 </div>
-                <div className="description mb-2">{card.description}</div>
+                <div className="description mb-2 text-sm md:text-base">{card.description}</div>
                 <hr />
                 <div className="mt-3 flex justify-between text-sm">
                   <p>

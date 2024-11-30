@@ -1,39 +1,55 @@
 /* Styles for the Swiper and cards */
 .card {
-    @apply shadow-lg border border-gray-200;
-    background-color: #fff;
-    border-radius: 10px;
-    padding: 20px;
-    transition: height 0.3s ease-in-out; /* Smooth height transition */
-    height: 220px; /* Default height */
-    overflow: hidden;
+  @apply shadow-lg border border-gray-200;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  transition: height 0.3s ease-in-out; /* Smooth height transition */
+  height: 220px; /* Default height */
+  overflow: hidden;
+}
+
+.card:hover {
+  height: 300px; /* Expanded height on hover */
+}
+
+.description {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  margin-top: 10px;
+  height: 0;
+  visibility: hidden;
+}
+
+.card:hover .description {
+  opacity: 1;
+  height: min-content;
+  visibility: visible; /* Reveal description on hover */
+}
+
+@media (max-width: 640px) {
+  .card {
+    @apply mx-2;
+    height: 300px !important; /* Fix height for mobile devices */
   }
-  
   .card:hover {
-    height: 300px; /* Expanded height on hover */
+    height: 300px; /* Ensure hover effect doesn't change height */
   }
-  
   .description {
-    opacity: 0;
+    opacity: 1;
     transition: opacity 0.3s ease-in-out;
     margin-top: 10px;
-    height: 0;
-    visibility: hidden;
-  }
-  
-  .card:hover .description {
-    opacity: 1;
     height: min-content;
     visibility: visible; /* Reveal description on hover */
   }
-  
-  /* Swiper specific styling */
-  .swiper-container {
-    width: 100%;
-  }
-  
-  .swiper-slide {
-    display: flex;
-    justify-content: center;
-  }
-  
+}
+
+/* Swiper specific styling */
+.swiper-container {
+  width: 100%;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+}
