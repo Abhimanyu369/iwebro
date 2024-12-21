@@ -67,7 +67,7 @@ const CardSlider = () => {
       name: "Abhimanyu Malik",
       experience: "8+ years",
       tech: "Full Stack Developer",
-      role: "Lead Full Stack Developer",
+      role: "Full Stack Developer",
       description:
         "Abhimanyu is a Lead Full Stack Developer with over 8 years of experience in designing and implementing end-to-end solutions for complex web applications.",
       techStack: ["Frontend", "Backend", "Full Stack"],
@@ -101,13 +101,13 @@ const CardSlider = () => {
           breakpoints={{
             // When window width is >= 640px, show 2 slides
             640: {
-              slidesPerView: 2,
-              spaceBetween: 30,
+              slidesPerView: 3,
+              spaceBetween: 10,
             },
             // When window width is >= 1024px, show 3 slides
             1024: {
-              slidesPerView: 2,
-              spaceBetween: 30,
+              slidesPerView: 3,
+              spaceBetween: 10,
             },
           }}
           onSwiper={(swiper) => console.log(swiper)}
@@ -116,7 +116,7 @@ const CardSlider = () => {
           {cards.map((card, index) => (
             <SwiperSlide key={index}>
               <div className="card">
-                <div className="flex gap-5">
+                <div className="flex gap-3">
                   <div className="relative bg-slate-300 rounded-md w-[80px] h-[80px]">
                     <img
                       className="w-[80px] h-[80px] object-contain"
@@ -125,25 +125,30 @@ const CardSlider = () => {
                     />
                   </div>
                   <div className="flex flex-col md:flex-row justify-between items-start grow">
-                    <div className="flex flex-col justify-start items-start gap-2">
+                    <div className="flex flex-col justify-start items-start gap-1">
                       <h4 className="text-xs bg-[#0e8ac87a] px-2 py-1 rounded text-white">
                         {card.role}
                       </h4>
-                      <h3 className="text-md md:text-xl">{card.name}</h3>
+                      <h3 className="text-md md:text-md">{card.name}</h3>
                     </div>
-                    <div className="text-xs bg-[#0e8ac8] px-2 py-1 rounded text-white flex items-center mt-1 md:mt-0">
+                    <div className="text-[10px] bg-[#0e8ac8] px-2 py-1 rounded text-white flex items-center mt-1 md:mt-0">
                       <IoIosStar /> Top Rated
                     </div>
                   </div>
                 </div>
                 <div className="flex gap-2 mt-4">
                   {card?.techStack?.map((item, itemIndex) => (
-                    <div className="border py-1 px-2 rounded text-xs" key={itemIndex}>
+                    <div
+                      className="border py-1 px-2 rounded text-xs"
+                      key={itemIndex}
+                    >
                       {item}
                     </div>
                   ))}
                 </div>
-                <div className="description mb-2 text-sm md:text-base">{card.description}</div>
+                <div className="description mb-2 text-sm md:text-base">
+                  {card.description}
+                </div>
                 <hr />
                 <div className="mt-3 flex justify-between text-sm">
                   <p>

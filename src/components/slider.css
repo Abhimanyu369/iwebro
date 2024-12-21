@@ -1,9 +1,9 @@
 /* Styles for the Swiper and cards */
 .card {
-  @apply shadow-lg border border-gray-200;
+  @apply border border-gray-200;
   background-color: #fff;
   border-radius: 10px;
-  padding: 20px;
+  padding: 10px;
   transition: height 0.3s ease-in-out; /* Smooth height transition */
   height: 220px; /* Default height */
   overflow: hidden;

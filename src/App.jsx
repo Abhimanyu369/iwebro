@@ -106,6 +106,10 @@ import VendorDashboardPage from "./pages/vendor/Dashboard";
 import AssignedJobs from "./pages/vendor/AssignedJobs";
 import UploadProfile from "./pages/vendor/UploadProfile";
 import ProtectedRoute from "./components/ProtectedRoute";
+import VetDevelopers from "./pages/VetDevelopers";
+import FAQ from "./pages/Faq";
+import CaseStudies from "./pages/CaseStudies";
+import Testimonials from "./pages/Testimonials";
 
 function App() {
   return (
@@ -121,6 +125,11 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/how-we-vet" element={<VetDevelopers />} />
+          <Route path="/faq-companies" element={<FAQ />} />
+          <Route path="/case-studies" element={<CaseStudies />} />
+          <Route path="/testimonials" element={<Testimonials />} />
+
           <Route path="/contact" element={<Contact />} />
           <Route path="/hiring" element={<Hiring />} />
           <Route path="/signup" element={<Signup />} />
