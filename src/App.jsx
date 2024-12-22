@@ -112,6 +112,7 @@ import VetDevelopers from "./pages/VetDevelopers";
 import FAQ from "./pages/Faq";
 import CaseStudies from "./pages/CaseStudies";
 import Testimonials from "./pages/Testimonials";
+import Queries from "./pages/admin/Queries";
 
 function App() {
   return (
@@ -148,6 +149,7 @@ function App() {
             }
           >
             <Route path="" element={<AdminDashboardPage />} />
+            <Route path="queries" element={<Queries />} />
           </Route>
 
           {/* Client Dashboard Routes */}
