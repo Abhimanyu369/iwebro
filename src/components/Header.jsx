@@ -128,7 +128,7 @@ const Header = () => {
             Hire Talent
           </Link>
           <Link
-            to="/signup"
+            to="/signin"
             className={`${scrolled ? "text-gray-900" : "text-white"} hover:underline`}
           >
             Log In

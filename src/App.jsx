@@ -99,10 +99,12 @@ import View_team_content from "./adminpanel/pages/View_team_content";
 import View_apply_developer from "./adminpanel/pages/View_apply_developer ";
 import ClientDashboard from "./pages/client/ClientDashboard";
 import VendorDashboard from "./pages/vendor/VendorDashboard";
+import AdminDashboard from "./pages/admin/AdminDashboard";
 import PostRequirement from "./pages/client/PostRequirement";
 import MatchingProfiles from "./pages/client/MatchingProfiles";
 import ClientDashboardPage from "./pages/client/Dashboard";
 import VendorDashboardPage from "./pages/vendor/Dashboard";
+import AdminDashboardPage from "./pages/admin/Dashboard";
 import AssignedJobs from "./pages/vendor/AssignedJobs";
 import UploadProfile from "./pages/vendor/UploadProfile";
 import ProtectedRoute from "./components/ProtectedRoute";
@@ -135,6 +137,18 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/hire-now" element={<LandingPage />} />
           <Route path="/signin" element={<Signin />} />
+
+          {/* Client Dashboard Routes */}
+          <Route
+            path="/admin-dashboard"
+            element={
+              <ProtectedRoute>
+                <AdminDashboard />
+              </ProtectedRoute>
+            }
+          >
+            <Route path="" element={<AdminDashboardPage />} />
+          </Route>
 
           {/* Client Dashboard Routes */}
           <Route

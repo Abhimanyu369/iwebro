@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import API from '../api/axios'; // Import your Axios instance
 
 const Signup = () => {
@@ -73,6 +73,12 @@ const Signup = () => {
         >
           Signup
         </button>
+        <p className="mt-4 text-center">
+          Already have an account?{" "}
+          <Link to="/signin" className="text-blue-500 hover:underline">
+            Sign In
+          </Link>
+        </p>
       </form>
     </div>
   );
