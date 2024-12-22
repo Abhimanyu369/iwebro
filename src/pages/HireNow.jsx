@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import Marquee from "react-fast-marquee";
 import Select from "react-select";
+import API from "../api/axios"; // Axios instance
 
 // Skill options with icons
 const skillOptions = [
@@ -50,6 +51,7 @@ const LandingPage = () => {
     source: "",
   });
   const [thankYouMessage, setThankYouMessage] = useState(false); // State for thank you message
+  const [errorMessage, setErrorMessage] = useState(""); // Error message state
 
   // Handle input changes
   const handleChange = (e) => {
@@ -68,25 +70,39 @@ const LandingPage = () => {
     }));
   };
 
-  // Handle form submission
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Display thank you message
-    setThankYouMessage(true);
-    // Clear form after submission
-    setFormData({
-      firstName: "",
-      lastName: "",
-      email: "",
-      phoneNumber: "",
-      howCanWeHelp: "",
-      skills: [],
-      source: "",
-    });
-    // Hide message after 5 seconds
-    setTimeout(() => {
-      setThankYouMessage(false);
-    }, 5000);
+    setErrorMessage("");
+    setThankYouMessage(false);
+
+    const processedData = {
+      ...formData,
+      skills: formData.skills.map((skill) => skill.value), // Extract 'value' from each selected option
+    };
+    console.log("for,", processedData);
+    try {
+      await API.post("/queries", processedData);
+      setThankYouMessage(true); // Show success message
+      // Clear form
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        phoneNumber: "",
+        howCanWeHelp: "",
+        skills: [],
+        source: "",
+      });
+    } catch (error) {
+      console.error(
+        "Error submitting query:",
+        error.response?.data || error.message
+      );
+      setErrorMessage(
+        error.response?.data?.message ||
+          "Failed to submit the form. Please try again."
+      );
+    }
   };
 
   return (
@@ -140,6 +156,11 @@ const LandingPage = () => {
           {thankYouMessage && (
             <div className="text-green-600 bg-green-100 p-3 rounded-lg mb-4">
               Thanks! We will get back to you soon.
+            </div>
+          )}
+          {errorMessage && (
+            <div className="text-red-600 bg-red-100 p-3 rounded-lg mb-4">
+              {errorMessage}
             </div>
           )}
           <form onSubmit={handleSubmit} className="space-y-4">
