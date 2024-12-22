@@ -1,5 +1,5 @@
-// const BACKEND_COMMAN_URL = 'https://toptalenz.com';
-const BACKEND_COMMAN_URL = 'http://localhost:8081';
+const BACKEND_COMMAN_URL = 'https://toptalenz.com';
+// const BACKEND_COMMAN_URL = 'http://localhost:8081';
 
 const headers = {
   'Access-Control-Allow-Origin': '*',
