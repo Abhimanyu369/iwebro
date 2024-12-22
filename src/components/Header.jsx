@@ -53,6 +53,14 @@ const Header = () => {
     setMenuOpen(!menuOpen);
   };
 
+  const toggleDropdown = (index) => {
+    console.log("index", index)
+    setIsDropdownOpen((prevState) => ({
+      ...prevState,
+      [index]: !prevState[index],
+    }));
+  };
+
   return (
     <header
       className={`${
@@ -109,7 +117,9 @@ const Header = () => {
                   className={({ isActive }) =>
                     isActive
                       ? "text-[#0e8ac8] font-semibold"
-                      : `${scrolled ? "text-gray-900" : "text-white"} hover:underline`
+                      : `${
+                          scrolled ? "text-gray-900" : "text-white"
+                        } hover:underline`
                   }
                 >
                   {nav.text}
@@ -129,7 +139,9 @@ const Header = () => {
           </Link>
           <Link
             to="/signin"
-            className={`${scrolled ? "text-gray-900" : "text-white"} hover:underline`}
+            className={`${
+              scrolled ? "text-gray-900" : "text-white"
+            } hover:underline`}
           >
             Log In
           </Link>
@@ -160,11 +172,14 @@ const Header = () => {
               <div key={index} className="relative group w-full text-center">
                 {nav.subLinks ? (
                   <>
-                    <span className="text-gray-900 hover:underline cursor-pointer">
-                      {nav.text} ▼
+                    <span
+                      onClick={() => toggleDropdown(index)}
+                      className="text-gray-900 hover:underline cursor-pointer flex items-center gap-2 justify-center"
+                    >
+                      {nav.text} <IoIosArrowDown />
                     </span>
-                    {isDropdownOpen && (
-                      <div className="absolute left-0 mt-2 bg-black text-white rounded-lg shadow-lg w-full p-4 space-y-2 z-50">
+                    {isDropdownOpen[index] && (
+                      <div className="mt-2 bg-black text-white rounded-lg shadow-lg w-full p-4 space-y-2 z-50">
                         {nav.subLinks.map((subLink, subIndex) => (
                           <Link
                             key={subIndex}
