@@ -113,6 +113,12 @@ import FAQ from "./pages/Faq";
 import CaseStudies from "./pages/CaseStudies";
 import Testimonials from "./pages/Testimonials";
 import Queries from "./pages/admin/Queries";
+import Notifications from "./pages/admin/Notifications";
+import ProfileApprovals from "./pages/admin/ProfileApprovals";
+import AllContracts from "./pages/admin/contracts/AllContracts";
+import ContractRequests from "./pages/admin/contracts/ContractRequests";
+import VendorListing from "./pages/admin/vendors/VendorListing";
+import ClientListing from "./pages/admin/clients/ClientListing";
 
 function App() {
   return (
@@ -150,6 +156,12 @@ function App() {
           >
             <Route path="" element={<AdminDashboardPage />} />
             <Route path="queries" element={<Queries />} />
+            <Route path="contracts" element={<AllContracts />} />
+            <Route path="contract-requests" element={<ContractRequests />} />
+            <Route path="approval-requests" element={<ProfileApprovals />} />
+            <Route path="vendor-listing" element={<VendorListing />} />
+            <Route path="client-listing" element={<ClientListing />} />
+            <Route path="notifications" element={<Notifications />} />
           </Route>
 
           {/* Client Dashboard Routes */}
