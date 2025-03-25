@@ -15,6 +15,25 @@ import CardSlider from "../../components/CardSlider";
 import WeServe from "./WeServe";
 import HiringForm from "../../components/HiringForm/HiringForm";
 
+import { AiFillDollarCircle } from "react-icons/ai";
+import { FaUserTie } from "react-icons/fa6";
+import { MdWork } from "react-icons/md";
+
+const business = [
+  {
+    icon: <AiFillDollarCircle />,
+    text: "Cost-effectiveness",
+  },
+  {
+    icon: <FaUserTie />,
+    text: "Tech talent surplus",
+  },
+  {
+    icon: <MdWork />,
+    text: "Job role expertise",
+  },
+];
+
 function Home() {
   return (
     <>
@@ -42,6 +61,33 @@ function Home() {
       <Flow />
       <Hiring />
       <HomeCards />
+      <div className="bg-[#0e8ac8]">
+        <div className="max-w-6xl mx-auto py-10 px-4 md:px-0 ">
+          <div className="grid grid-cols-10 gap-4 md:gap-10 items-center">
+            <div className="col-span-10 md:col-span-4">
+              <h3 className="text-xl md:text-2xl text-white">
+                Businesses from the USA, Australia <br/>and 
+                UK prefer hiring from
+                India.
+              </h3>
+            </div>
+            <div className="md:mt-0 col-span-10 md:col-span-6">
+              <p className="text-white text-xl mb-5 md:mb-2 md:text-center font-semibold">Top 3 reasons</p>
+              <div className="grid grid-cols-3 gap-3">
+                {business.map((item, index) => (
+                  <div
+                    key={index}
+                    className="col-span-3 md:col-span-1 flex gap-2 items-center"
+                  >
+                    <span className="bg-white text-[#0e8ac8] p-1.5 text-lg rounded-full">{item.icon}</span>
+                    <p className="text-white text-lg">{item.text}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <div className="my-12 max-w-6xl mx-auto">
         <div className="flex flex-col gap-1 col-span-12 text-gray-600 bg-transparent text-start pb-8 md:pb-10">
           <h2
@@ -76,7 +122,12 @@ function Home() {
             {[1, 2, 3, 4, 5, 6, 7].map((img, index) => (
               <SwiperSlide key={index}>
                 <div className="h-80 w-full">
-                  <img src={`/img${img}.jpg`} className={`h-full w-full object-cover ${index === 3 ? "" : "object-top"}`} />
+                  <img
+                    src={`/img${img}.jpg`}
+                    className={`h-full w-full object-cover ${
+                      index === 3 ? "" : "object-top"
+                    }`}
+                  />
                 </div>
               </SwiperSlide>
             ))}

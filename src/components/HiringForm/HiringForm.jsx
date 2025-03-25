@@ -1,7 +1,7 @@
 
 const HiringForm = () => {
   return (
-    <div className="min-h-screen bg-[#0e8ac8] flex items-center justify-center p-4">
+    <div className="py-20 bg-[#0e8ac8] flex items-center justify-center p-4">
       <div className="w-full max-w-4xl bg-white p-8 rounded-lg shadow-md">
         <h2 className="text-2xl text-center">
           You don’t need another mediocre vendor for SaaS hiring.
