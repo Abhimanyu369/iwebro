@@ -13,12 +13,10 @@ export default function Hiring() {
             <div className="hero-bg-video-content">
               <h1 className="hero-bg-video-title">Why 5%?</h1>
               <p className="hero-bg-video-des">
-                Our name "Top Talenz" comes from Top Talent — meaning we
-                constantly strive to find and work with the best from around the
-                world. Our rigorous screening process identifies experts in
-                their domains who have passion and drive. Of the thousands of
-                applications Top Talenz sees each month, typically fewer than 5%
-                are accepted.
+                "Top Talenz" is derived from "Top Talent" — reflecting our
+                commitment to working with the best global professionals.
+                Through a rigorous screening process, we select only the top 5%
+                of applicants who demonstrate expertise, passion, and drive.
               </p>
             </div>
           </div>

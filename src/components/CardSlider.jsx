@@ -115,49 +115,52 @@ const CardSlider = () => {
         >
           {cards.map((card, index) => (
             <SwiperSlide key={index}>
-              <div className="card">
+              <div className="card flex flex-col">
                 <div className="flex gap-3">
-                  <div className="relative bg-slate-300 rounded-md w-[80px] h-[80px]">
+                  <div className="relative bg-slate-300 rounded-full w-[80px] h-[80px]">
                     <img
-                      className="w-[80px] h-[80px] object-contain"
+                      className="w-[80px] h-[80px] object-contain rounded-full"
                       src={`/img-${index + 1}.png`}
                       alt="Anuar Heberlein"
                     />
+                    <div className="bg-[#0e8ac8] text-white w-[20px] h-[20px] rounded-full absolute bottom-0 right-0 flex justify-center items-center">
+                      <IoIosStar />
+                    </div>
                   </div>
                   <div className="flex flex-col md:flex-row justify-between items-start grow">
                     <div className="flex flex-col justify-start items-start gap-1">
+                      <h3 className="text-md md:text-md">{card.name}</h3>
                       <h4 className="text-xs bg-[#0e8ac87a] px-2 py-1 rounded text-white">
                         {card.role}
                       </h4>
-                      <h3 className="text-md md:text-md">{card.name}</h3>
-                    </div>
-                    <div className="text-[10px] bg-[#0e8ac8] px-2 py-1 rounded text-white flex items-center mt-1 md:mt-0">
-                      <IoIosStar /> Top Rated
+                      <p className="text-xs text-gray-500">
+                        Experience:{" "}
+                        <span className="font-bold">{card.experience}</span>
+                      </p>
                     </div>
                   </div>
                 </div>
                 <div className="flex gap-2 mt-4">
                   {card?.techStack?.map((item, itemIndex) => (
                     <div
-                      className="border py-1 px-2 rounded text-xs"
+                      className="border py-1 px-2 rounded text-xs bg-slate-100"
                       key={itemIndex}
                     >
                       {item}
                     </div>
                   ))}
                 </div>
-                <div className="description mb-2 text-sm md:text-base">
+                <div className="description mb-2 text-sm md:text-sm">
                   {card.description}
                 </div>
-                <hr />
-                <div className="mt-3 flex justify-between text-sm">
-                  <p>
-                    Experience:{" "}
-                    <span className="font-bold">{card.experience}</span>
-                  </p>
-                  <p>
+                {/* <hr className="mt-auto"/> */}
+                <div className="mt-3 flex justify-between text-sm mt-auto">
+                  {/* <p>
                     Availability: <span className="font-bold">Full-Time</span>
-                  </p>
+                  </p> */}
+                  <a href="#" className="text-[#0e8ac8] underline">
+                    View Profile
+                  </a>
                 </div>
               </div>
             </SwiperSlide>

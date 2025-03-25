@@ -4,7 +4,7 @@ export default function Benefits() {
   const cards = [
     {
       url: "/assets/svg/benefit1.svg",
-      title: "The top 5%",
+      title: "Verified top 5%",
       desc: "We are AI powered platform that access by totally transparent code test and soft skills test.",
     },
     {

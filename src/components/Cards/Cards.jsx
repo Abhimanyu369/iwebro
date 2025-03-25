@@ -67,7 +67,7 @@ export default function Cards() {
           spaceBetween={20}
           slidesPerView={5}
           autoplay={{
-            delay: 2500,
+            delay: 3500,
             disableOnInteraction: false,
           }}
           // pagination={{ clickable: true, type: "progressbar" }}
@@ -78,13 +78,12 @@ export default function Cards() {
           {cards.map((card, index) => (
             <SwiperSlide
               key={index}
-              className="max-w-xs rounded grow overflow-hidden shadow-lg border border-gray-200"
+              className="max-w-xs rounded items-stretch shadow-lg border border-gray-200"
             >
               <div className="relative bg-slate-300 pt-5">
                 <img
                   className="w-full h-[180px] object-contain"
                   src={`/img-${index + 1}.png`}
-                  // src="https://assets.toptal.io/images?url=https%3A%2F%2Fbs-uploads.toptal.io%2Fblackfish-uploads%2Fcomponents%2Fimage%2F6052740%2Ffile%2Foptimized%2Fhero_section-big_800x600-transformed-c356edd6d73b572e8806166d85dbead5.png&width=360" // Replace with actual image URL
                   alt="Anuar Heberlein"
                 />
               </div>
@@ -125,33 +124,11 @@ export default function Cards() {
                 </div>
                 <div className="text-gray-500 text-sm mb-2">in Tech</div>
                 <div className="flex items-center mb-2 text-sm">
-                  {/* <svg
-                    className="w-5 h-5 text-gray-500 mr-1"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M4 6h16M4 10h16M4 14h16M4 18h16"
-                    ></path>
-                  </svg> */}
                   {card.tech}
                 </div>
                 <div className="text-gray-700 font-normal mb-1 text-xs">
                   {card.experience}
                 </div>
-                {/* <div className="text-gray-700 font-normal mb-1 text-xs">
-                  PREVIOUSLY AT
-                </div>
-                <img
-                  src="https://assets.toptal.io/images?url=https%3A%2F%2Fbs-uploads.toptal.io%2Fblackfish-uploads%2Fcomponents%2Fimage%2F6052692%2Ffile%2Foptimized%2FSpaceX__262D3D-e70c0594ae2c647d090f47a447067b4c.svg"
-                  alt=""
-                  className="mb-2 h-4 w-auto"
-                /> */}
               </div>
             </SwiperSlide>
           ))}

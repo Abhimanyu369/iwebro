@@ -23,7 +23,7 @@ const Header = () => {
       subLinks: [
         { text: "How we vet developers", link: "/how-we-vet" },
         { text: "FAQ for companies", link: "/faq-companies" },
-        { text: "Case studies", link: "/case-studies" },
+        // { text: "Case studies", link: "/case-studies" },
         { text: "Testimonials", link: "/testimonials" },
         { text: "About us", link: "/about" },
       ],

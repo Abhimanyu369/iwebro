@@ -5,20 +5,20 @@
   border-radius: 10px;
   padding: 10px;
   transition: height 0.3s ease-in-out; /* Smooth height transition */
-  height: 220px; /* Default height */
+  height: 260px;
   overflow: hidden;
 }
 
 .card:hover {
-  height: 300px; /* Expanded height on hover */
+  /* height: 300px;  */
 }
 
 .description {
-  opacity: 0;
+  /* opacity: 0; */
   transition: opacity 0.3s ease-in-out;
   margin-top: 10px;
-  height: 0;
-  visibility: hidden;
+  /* height: 0; */
+  /* visibility: hidden; */
 }
 
 .card:hover .description {

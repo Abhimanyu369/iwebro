@@ -9,7 +9,7 @@ export default function About() {
         <div className="hero-bg-video-overlay-horizontal"></div>
         <div className="container z-10 relative">
           <div className="hero-bg-video-left pt-40 mb-20">
-            <div className="hero-bg-video-content">
+            <div className="hero-bg-video-content px-5 md:px-0">
               <h1 className="hero-bg-video-title">About</h1>
               <p className="hero-bg-video-des">
                 TopTalenz is network of Highly skilled, certified tech
@@ -26,10 +26,10 @@ export default function About() {
         <div className="hero-bg-video-overlay-vertical"></div>
       </div>
       <div className="py-20 bg-gray-50 last:mb-0">
-        <div className="max-w-screen-xl mx-auto">
-          <div className="flex flex-col gap-1 col-span-12 text-gray-600 bg-transparent text-start pb-6">
+        <div className="max-w-screen-xl mx-auto px-5 md:px-12">
+          <div className="flex flex-col gap-1 text-center col-span-12 text-gray-600 bg-transparent pb-6">
             <h2
-              className="heading-sm text-4xl md:heading-lg font-normal 2xl:heading-xl text-gray-900"
+              className="heading-sm text-center text-4xl md:heading-lg font-normal 2xl:heading-xl text-gray-900"
               data-testid="usp-title"
             >
               About Us
@@ -45,7 +45,7 @@ export default function About() {
               and convenience for our customers.
             </p>
           </div>
-          <div className="mb-5">
+          <div className="mb-5 text-center">
             <h3 className="font-medium text-base mb-3">Business Origins</h3>
             <p className="text-sm font-light">
               TopTalenz was founded with the vision of bridging the gap between
@@ -58,7 +58,7 @@ export default function About() {
               recruitment and onboarding.
             </p>
           </div>
-          <div className="mb-5">
+          <div className="mb-5 text-center">
             <h3 className="font-medium text-base mb-3">
               Competitive Advantage
             </h3>
@@ -73,7 +73,7 @@ export default function About() {
               partner for tech talent sourcing.
             </p>
           </div>
-          <div className="mb-5">
+          <div className="mb-5 text-center">
             <h3 className="font-medium text-base mb-3">Targeting</h3>
             <p className="text-sm font-light">
               Our primary focus will be on targeting the Tech Startups, Small

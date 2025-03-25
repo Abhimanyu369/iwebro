@@ -13,6 +13,7 @@ import HomeMarquee from "../../components/HomeMarquee/HomeMarquee";
 import HomeCards from "../../components/HomeCards/HomeCards";
 import CardSlider from "../../components/CardSlider";
 import WeServe from "./WeServe";
+import HiringForm from "../../components/HiringForm/HiringForm";
 
 function Home() {
   return (
@@ -67,14 +68,14 @@ function Home() {
               },
               // When window width is >= 1024px, show 3 slides
               1024: {
-                slidesPerView: 2,
+                slidesPerView: 3,
                 spaceBetween: 30,
               },
             }}
           >
             {[1, 2, 3, 4, 5, 6, 7].map((img, index) => (
               <SwiperSlide key={index}>
-                <div className="h-96 w-full">
+                <div className="h-80 w-full">
                   <img src={`/img${img}.jpg`} className={`h-full w-full object-cover ${index === 3 ? "" : "object-top"}`} />
                 </div>
               </SwiperSlide>
@@ -83,6 +84,7 @@ function Home() {
         </div>
         <div className="max-w-screen-xl mx-auto flex gap-4"></div>
       </div>
+      <HiringForm />
       <WeServe />
       <Footer />
     </>
