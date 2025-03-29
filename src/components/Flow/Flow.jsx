@@ -24,7 +24,7 @@ export default function Flow() {
     },
     {
       number: "04",
-      label: "Welcome",
+      label: "Get started",
       title: "Onboard",
       description:
         "Once you decide, we'll take care of the onboarding process for you.",
