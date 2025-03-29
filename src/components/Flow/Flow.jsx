@@ -4,28 +4,28 @@ export default function Flow() {
   const steps = [
     {
       number: "01",
-      label: "Define",
-      title: "Tell us what you need",
+      label: "Requirements",
+      title: "Tell us what your needs",
       description:
-        "We'll get in touch with you to understand your requirements and preferences.",
+        "Our POC will get in touch with you to understand your requirements and preferences.",
     },
     {
       number: "02",
-      label: "Discover",
-      title: "Meet the top talent",
-      description: "Get 3 to 5 suitable, pre-vetted candidates in 48 hours.",
+      label: "Showcase",
+      title: "Show the top verified talent",
+      description: "Get pre-vetted experts in 48 hours.",
     },
     {
       number: "03",
-      label: "Evaluate",
-      title: "Interview with ease",
+      label: "Interview",
+      title: "Technical Test/Interview",
       description:
-        "Choose the candidate that aligns with your needs and we'll arrange an interview.",
+        "Choose the candidate that aligns with your requirements and we'll arrange an interview.",
     },
     {
       number: "04",
-      label: "Onboard",
-      title: "Hire with confidence",
+      label: "Welcome",
+      title: "Onboard",
       description:
         "Once you decide, we'll take care of the onboarding process for you.",
     },
@@ -79,13 +79,17 @@ export default function Flow() {
               key={index}
               className="bg-gray-50 p-6 rounded-xl border flex-col items-start text-left"
             >
-              <div className="text-2xl mb-2">{step.number}</div>
-              <div className="mb-2">
-                <span className="inline-block px-3 py-1 rounded-full border border-black text-sm font-medium">
-                  {step.label}
-                </span>
+              <div className="flex items-center gap-4">
+                <div className="text-2xl mb-2 text-[#0e8ac8]">
+                  {step.number}
+                </div>
+                <div className="mb-2 grow">
+                  <span className="block px-3 py-1 rounded-full border bg-[#0e8ac8] text-white text-sm font-medium">
+                    {step.label}
+                  </span>
+                </div>
               </div>
-              <h3 className="text-lg mb-1">{step.title}</h3>
+              <h3 className="text-lg mb-1 text-[#0e8ac8]">{step.title}</h3>
               <p className="text-sm text-gray-600">{step.description}</p>
             </div>
           ))}
