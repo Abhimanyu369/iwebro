@@ -119,6 +119,7 @@ import AllContracts from "./pages/admin/contracts/AllContracts";
 import ContractRequests from "./pages/admin/contracts/ContractRequests";
 import VendorListing from "./pages/admin/vendors/VendorListing";
 import ClientListing from "./pages/admin/clients/ClientListing";
+import AttendancePage from "./pages/vendor/Attendence";
 
 function App() {
   return (
@@ -190,6 +191,7 @@ function App() {
             <Route path="" element={<VendorDashboardPage />} />
             <Route path="assigned-jobs" element={<AssignedJobs />} />
             <Route path="upload-profile" element={<UploadProfile />} />
+            <Route path="attendance" element={<AttendancePage />} />
           </Route>
 
           {/* old */}

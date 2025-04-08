@@ -137,6 +137,17 @@ const VendorDashboardLayout = () => {
             >
               Upload Profile
             </NavLink>
+
+            <NavLink
+              to="attendance"
+              className={({ isActive }) =>
+                `block px-3 py-2 rounded ${
+                  isActive ? 'bg-gray-700' : 'hover:bg-gray-700'
+                }`
+              }
+            >
+              Attendance
+            </NavLink>
           </nav>
         </aside>
 
