@@ -120,6 +120,8 @@ import ContractRequests from "./pages/admin/contracts/ContractRequests";
 import VendorListing from "./pages/admin/vendors/VendorListing";
 import ClientListing from "./pages/admin/clients/ClientListing";
 import AttendancePage from "./pages/vendor/Attendence";
+import AttendanceList from "./pages/client/Attendence";
+import Tracker from "./pages/client/Tracker";
 
 function App() {
   return (
@@ -177,6 +179,8 @@ function App() {
             <Route path="" element={<ClientDashboardPage />} />
             <Route path="post-requirement" element={<PostRequirement />} />
             <Route path="matching-profiles" element={<MatchingProfiles />} />
+            <Route path="attendance" element={<AttendanceList />} />
+            <Route path="tracker" element={<Tracker />} />
           </Route>
 
           {/* Vendor Dashboard Routes */}

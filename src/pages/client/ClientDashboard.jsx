@@ -133,6 +133,26 @@ const ClientDashboardLayout = () => {
             >
               Requirements
             </NavLink>
+            <NavLink
+              to="attendance"
+              className={({ isActive }) =>
+                `block px-3 py-2 rounded ${
+                  isActive ? 'bg-gray-700' : 'hover:bg-gray-700'
+                }`
+              }
+            >
+              Attendance
+            </NavLink>
+            <NavLink
+              to="tracker"
+              className={({ isActive }) =>
+                `block px-3 py-2 rounded ${
+                  isActive ? 'bg-gray-700' : 'hover:bg-gray-700'
+                }`
+              }
+            >
+              Tracker
+            </NavLink>
           </nav>
         </aside>
 
